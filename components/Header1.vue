@@ -5,48 +5,45 @@
             <!-- Navigation -->
             <b-navbar v-b-scrollspy:list-of-sections v-b-scrollspy="20" class="navbar navbar-expand-lg fixed-top d-none d-sm-none d-md-block d-lg-block d-xl-block" id="mainNav">
                 <div class="container">
-                    <router-link class="navbar-brand js-scroll-trigger" to="/">
+                    <nuxt-link class="navbar-brand js-scroll-trigger" to="/">
                     <b-img :src="require('../assets/img/logo.png')" img-alt="RATH Logo" class="img-fluid"></b-img>
-                    </router-link>
+                    </nuxt-link>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-bars"></i>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav text-capitalize ml-auto">
-                            <li class="nav-item dropdown"><a href="#home" class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown">Home<i class="fas fa-angle-down"></i></a>
+                            <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger" href="/" target="_self">INICIO</a>
+                            </li>
+                           <li class="nav-item dropdown"><a href="#" class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown">PROGRAMA INGLES<i class="fas fa-angle-down"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li><router-link to="/">Home Default</router-link></li>
-                                    <li><router-link to="/home2">Home Style 2</router-link></li>
-                                    <li><router-link to="/home3">Home Style 3</router-link></li>
-                                    <li><router-link to="/home4">Home Style 4</router-link></li>
-                                    <li><router-link to="/home5">Home Style 5</router-link></li>
+                                    <li><nuxt-link to="/">#</nuxt-link></li>
+                                    <li><nuxt-link to="/home2">#</nuxt-link></li>
+                                    <li><nuxt-link to="/home3">QUIENES SOMOS</nuxt-link></li>
+                                    <li><nuxt-link to="/home4">BLOG</nuxt-link></li>
+                                    <li><nuxt-link to="/home5">CONTACTO</nuxt-link></li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="#about" target="_self">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="#screenshots" target="_self">Screenshots</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="#features" target="_self">Features</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="#reviews" target="_self">Reviews</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" href="#blog">Blog<i class="fas fa-angle-down"></i></a>
+
+                            <li class="nav-item dropdown"><a href="#" class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown">QUE OFRECEMOS<i class="fas fa-angle-down"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li><router-link to="/bloggrid">Blog Grid</router-link></li>
-                                    <li><router-link to="/blogclassic">Blog Classic</router-link></li>
-                                    <li><router-link to="/blogsingle">Blog Single</router-link></li>
+                                    <li><nuxt-link to="/">#</nuxt-link></li>
+                                    <li><nuxt-link to="/home2">#</nuxt-link></li>
+                                    <li><nuxt-link to="/home3">#</nuxt-link></li>
+                                    <li><nuxt-link to="/home4"></nuxt-link></li>
+                                    <li><nuxt-link to="/home5">CONTACTO</nuxt-link></li>
                                 </ul>
                             </li>
+
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="#contact" target="_self">Contact</a>
+                                <a class="nav-link js-scroll-trigger" href="#screenshots" target="_self">QUIENES SOMOS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger theme-button" href="#download" target="_self">Download</a>
+                                <a class="nav-link js-scroll-trigger" href="#features" target="_self">BLOG</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger" href="#reviews" target="_self">CONTACTO</a>
                             </li>
                         </ul>
                     </div>
@@ -54,7 +51,7 @@
             </b-navbar>
             <!-- Navigation -->
 
-            <!-- Mobile Menu Start -->  
+            <!-- Mobile Menu Start -->
             <b-navbar toggleable="lg" v-b-scrollspy:list-of-sections v-b-scrollspy="20" class="mobile_menu fixed-top hidden d-none" id="mainNavMobile">
                 <b-container fluid>
                     <b-navbar-brand to="/"><b-img :src="require('../assets/img/logo.png')" img-alt="RATH Logo" class="img-fluid mobile-logo "></b-img></b-navbar-brand>
@@ -71,11 +68,11 @@
                         <!-- Right aligned nav items -->
                         <b-navbar-nav class="ml-auto">
                             <b-nav-item-dropdown to="/" text="Home" no-caret class="fas fa-angle-down">
-                                <b-dropdown-item to="/">Home Default</b-dropdown-item>
-                                <b-dropdown-item to="/home2">Home Style 2</b-dropdown-item>
-                                <b-dropdown-item to="/home3">Home Style 3</b-dropdown-item>
-                                <b-dropdown-item to="/home4">Home Style 4</b-dropdown-item>
-                                <b-dropdown-item to="/home5">Home Style 5</b-dropdown-item>
+                                <b-dropdown-item to="/">#</b-dropdown-item>
+                                <b-dropdown-item to="/home2">#</b-dropdown-item>
+                                <b-dropdown-item to="/home3">#</b-dropdown-item>
+                                <b-dropdown-item to="/home4">#</b-dropdown-item>
+                                <b-dropdown-item to="/home5">#</b-dropdown-item>
                             </b-nav-item-dropdown>
                             <b-nav-item href="#about">About</b-nav-item>
                             <b-nav-item href="#screenshots">Screenshots</b-nav-item>
@@ -104,7 +101,7 @@ export default {
   name: 'Header1',
 
     mounted: function () {
-    
+
     // Menu Js
     this.$nextTick(function () {
 
@@ -112,7 +109,7 @@ export default {
 
       var header = document.getElementById("mainNav");
       var sticky = header.offsetTop;
-      
+
       function myFunction() {
         if (window.pageYOffset > sticky) {
           header.classList.add("navbar-shrink");
@@ -120,7 +117,7 @@ export default {
           header.classList.remove("navbar-shrink");
         }
       }
-      
+
     })
     // Menu End
 

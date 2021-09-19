@@ -74,7 +74,7 @@ body {
     background: #fff none repeat scroll;
     font-size: 16px;
     font-weight: normal;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Mukta', sans-serif;
     color: #777c87;
     letter-spacing: 0.05em;
     position: relative;
@@ -159,7 +159,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Mukta', sans-serif;
     font-weight: 700;
     margin: 0;
     color: #2c303a;
@@ -299,7 +299,7 @@ figure {
     2.3 Theme Font Family, Font Size
 -----------------------------------*/
 .font-nunito, .contact-form-wrapper form label, .review-comment-box h6, .widget-recent-posts ul li a p, .widget ul li a{
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Mukta', sans-serif;
 }
 .font-weight-light, .home-3 h2.section-heading > span {
      font-weight: 300;
@@ -345,7 +345,7 @@ section{
 
 .all-section-after::after, .about-area::after, .subscribe-area::after, .reviews-area:after, .contact-area:after, #features::after,
 .home-4 #faq::after{
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Mukta', sans-serif;
     position: absolute;
     color: #f7f5f8;
     font-size: 200px;
@@ -424,6 +424,7 @@ button:focus {
     cursor: pointer;
     transition: all 0.7s ease 0s;
     outline: none;
+    font-family: 'Mukta', sans-serif;;
     text-transform: capitalize;
     z-index: 99;
     padding: 12px 40px 14px;
@@ -467,6 +468,35 @@ button:focus {
     opacity: 1;
 }
 
+.theme-btn {
+    z-index: 11;
+    white-space: nowrap;
+    font-size: 16px;
+    line-height: 64px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    font-family: "Mukta",Sans-serif;
+    background-color: rgb(85, 187, 175);
+    border-radius: 35px;
+    outline: none;
+    box-shadow: rgb(153 153 153) 0px 0px 0px 0px;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-decoration: none;
+    visibility: inherit;
+    transition: none 0s ease 0s;
+    text-align: inherit;
+    margin: 0px;
+    padding: 0px 60px;
+    letter-spacing: 0px;
+    min-height: 0px;
+    min-width: 0px;
+    max-height: none;
+    max-width: none;
+    opacity: 1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transform-origin: 50% 50% 0px;
+  }
 /*-------------------------------------------
            4. Navbar Area CSS
 -------------------------------------------*/
@@ -480,8 +510,9 @@ button:focus {
 }
 #mainNav {
     background-color:transparent;
-    height: 94px;
+    height: 136px;
     display: flex !important;
+    border-bottom: 1px solid #54789530;
     transition: all ease .6s;
 }
 #mainNav.navbar-shrink {
@@ -493,11 +524,11 @@ button:focus {
     top: -3px;
 }
 #mainNav .navbar-nav .nav-item .nav-link {
-    font-size: 16px;
+    font-size: 15px;
+    font-family: 'Mukta', sans-serif;
     padding: 0.75em 15px;
     letter-spacing: 1px;
     position: relative;
-    font-weight: bold;
     color: #fff;
 }
 #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link.active {
@@ -656,6 +687,10 @@ button:focus {
     line-height: 15px;
     padding: 16px 30px;
 }
+.hero-button-box .theme-btn{
+    line-height: 15px;
+    padding: 16px 30px;
+}
 .hero-button-box .theme-button:last-child {
     background: #f2f6fb;
     color: #2ca6ef!important;
@@ -724,7 +759,7 @@ button:focus {
 .count-content {
     font-size: 42px;
     font-weight: 300;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Mukta', sans-serif;
     color: #42454f;
     position: absolute;
     top: 34px;
@@ -735,7 +770,7 @@ button:focus {
 .count-text {
     font-size: 18px;
     font-weight: 300;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Mukta', sans-serif;
     color: #42454f;
     text-transform: uppercase;
     margin-top: 35px;
@@ -1062,7 +1097,7 @@ button:focus {
 #accordion6 .panel-title a::before,
 #accordion6 .panel-title a.collapsed::before {
     content: "\f068";
-    font-family: "Font Awesome 5 Free";
+    font-family: "Mukta";
     font-weight: 900;
     width: 24px;
     height: 24px;
@@ -1255,7 +1290,7 @@ button:focus {
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Mukta', sans-serif;
 }
 .all-blog-posts-wrapper div:nth-child(1) .single-blog-post h6 > a {
     color: #e25396;
@@ -1428,7 +1463,7 @@ header.page-banner-area .header-caption-heading {
 	padding: 0 0.5rem;
 	color: #fff;
 	content: "\f10b";
-	font-family: Flaticon;
+	font-family: 'Mukta', sans-serif;
 	font-size: 10px;
 	top: 5px;
 	position: relative;
