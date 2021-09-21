@@ -10,7 +10,7 @@
                     <div class="hero-area-wrapper position-relative wow fadeInLeft">
                         <div class="hero-area-content">
                             <h1 class="title">{{ heroTitle }}</h1>
-                            <p class='subtitle'>{{heroSubTitle}}</p>
+                            <p class='subtitle' v-html="heroSubTitle"></p>
                             <div class="hero-button-box">
                                 <a href="#" class="theme-btn">Schedule My Tour</a>
                             </div>
@@ -34,7 +34,7 @@ export default {
       particleImage: require('../../assets/img/hero-bg-effect.png'),
       altText: 'particle',
       heroTitle: 'Creative space',
-      heroSubTitle: 'Whether it’s working for yourself, or remotely,it’s great to be independent.'
+      heroSubTitle: 'Un espacio rural de trabajo cerca a Guatapé en el que conectarás contigo y con el mundo a través de una experiencia multicultural de Inmersión Lingüística.Buscas una expansiòn en tu vida laboral? <br>Ven a nuestro Coworking y sumate a esta experiencia de Idioma ùnica mejorando tu nivel de Inglés mientras continúas trabajando de forma remota en la  Naturaleza. '
     }
   }
 

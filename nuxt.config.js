@@ -15,7 +15,13 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" },
+      { href:"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel:"stylesheet", integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin:"anonymous"},
+    ],
+    scripts: [
+      { src: "//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"},
+      { src: "https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.js" }
     ]
   },
 
@@ -27,7 +33,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/main.js'
+    {src: '~/plugins/main.js'},
+    {src: '~/plugins/lightbox.js', ssr: false}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
