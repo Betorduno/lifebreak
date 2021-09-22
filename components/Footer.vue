@@ -3,10 +3,10 @@
     <!-- Footer Start -->
     <footer class="copyrightarea">
         <div class="">
-            <div class="row d-flex justify-content-center">
+            <div class="row m-0 d-flex justify-content-center">
                 <img class="logo" src="https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/logo_02.png" alt="">
             </div>
-            <div class="row my-5 justify-content-center p-md-5 p-xs-2">
+            <div class="row m-0 my-5 justify-content-center p-md-5 p-xs-2">
                 <div class="col-xs-12 col-md-2 text-center">
                     <nuxt-link to="#" class="links">Inicio</nuxt-link>
                 </div>
@@ -20,7 +20,7 @@
                     <nuxt-link to="#" class="links">Contacto</nuxt-link>
                 </div>
             </div>
-            <div class="row flex-nowrap align-items-center align-content-center content">
+            <div class="row m-0 flex-nowrap align-items-center align-content-center content">
                 <div class="col-md-5">
                     <div class="divisor"></div>
                 </div>
@@ -45,7 +45,7 @@
                     <div class="divisor"></div>
                 </div>
             </div>
-            <div class="row justify-content-center mt-5">
+            <div class="row m-0 justify-content-center mt-5">
                 <p class="text-white">Copyright © 2021 - Madatto&Mosscreativo</p>
             </div>
         </div>

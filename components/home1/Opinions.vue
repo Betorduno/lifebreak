@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="content-flex my-5">
+    <div class="content-flex mt-5">
       <div
         class="cursor-pointer self-center px-8"
         @click.stop="prev"
@@ -108,6 +108,7 @@ export default {
 </script>
 
 <style scoped>
+
 .content-flex {
   background-color: #f8f9fe;
   padding: 0 !important;

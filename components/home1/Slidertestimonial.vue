@@ -1,7 +1,5 @@
 <template>
-  <div class="container-fluid">
-    <Opinions :images="imgs"/>
-  </div>
+  <Opinions :images="imgs"/>
 </template>
 
 <script>

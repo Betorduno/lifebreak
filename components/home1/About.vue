@@ -27,7 +27,7 @@ export default {
 </script>
 <style scoped>
  .container {
-   padding: 4em 0;
+   padding: 6em 0;
  }
  .row {
   margin: 0;

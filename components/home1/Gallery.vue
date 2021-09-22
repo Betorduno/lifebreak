@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import Lightbox from '@/components/home1/Lightbox.vue'
+import Lightbox from '~/components/home1/Lightbox.vue'
   export default {
     components: {
       Box: Lightbox

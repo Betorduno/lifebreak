@@ -34,7 +34,9 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     {src: '~/plugins/main.js'},
-    {src: '~/plugins/lightbox.js', ssr: false}
+    {src: '~/plugins/lightbox.js', ssr: false},
+    {src: '~/plugins/carousel.js', ssr: false},
+    {src: '~/plugins/aos.js', ssr: false}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -50,7 +52,7 @@ export default {
     'bootstrap-vue/nuxt',
   ],
   // router: {
-  //   base: './',
+  //   base: './'
   // },
   // // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
