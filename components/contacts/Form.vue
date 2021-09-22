@@ -4,52 +4,84 @@
       <div class="row m-0">
         <div class="col-12 col-lg-5 pb-5">
           <p class="sub-title">REQUEST FOR CALL BACK</p>
-          <h1 class="main-title d-flex justify-content-center">We're always ready to discuss coperation</h1>
+          <h1 class="main-title d-flex justify-content-center">
+            We're always ready to discuss coperation
+          </h1>
         </div>
         <div class="col-12 col-lg-7 m-0">
           <h2 class="Sub-titler">I would like to discuss:</h2>
-          <span class="inputtext" >
+          <span class="inputtext">
             <div class="efect">
-            <input class="inputr" 
-              type="text"
-              name="your-name"
-              value
-              size="62%"
-              aria-required="true"
-              aria-invalid="false"
-              placeholder="Your name"
-            />
+              <input
+                class="inputr"
+                type="text"
+                name="your-name"
+                value
+                size="62%"
+                aria-required="true"
+                aria-invalid="false"
+                placeholder="Your name"
+              />
             </div>
           </span>
 
-           <span class="inputtext" >
+          <span class="inputtext">
             <div class="efect">
-            <input class="inputr" 
-              type="text"
-              name="E-mail"
-              value
-              size="62%"
-              aria-required="true"
-              aria-invalid="false"
-              placeholder="E-mail"
-            />
+              <input
+                class="inputr"
+                type="text"
+                name="E-mail"
+                value
+                size="62%"
+                aria-required="true"
+                aria-invalid="false"
+                placeholder="E-mail"
+              />
             </div>
           </span>
 
-           <span class="inputtext" >
+          <span class="inputtext">
             <div class="efect">
-            <input class="inputr" 
-              type="text"
-              name="Message"
-              value
-              size="62%"
-              aria-required="true"
-              aria-invalid="false"
-              placeholder="Message"
-            />
+              <input
+                class="inputr"
+                type="text"
+                name="Message"
+                value
+                size="62%"
+                aria-required="true"
+                aria-invalid="false"
+                placeholder="Message"
+              />
             </div>
           </span>
-          
+
+          <div
+            class="row d-flex  d-flex align-items-evenly"
+          >
+            <div class="col-12  d-flex align-items-evenly">
+              <button class="theme-btn">Submit Now</button>
+            </div>
+
+            <div class="col-12  col-lg-6 ">
+              <div class="row ">
+                <div class="col">
+                  <p>Or call us and get free</p>
+                  <h4>+ 844 123 456 78</h4>
+                </div>
+
+                <div class="col  col-lg-6">
+                  <img
+                    width="55"
+                    height="55"
+                    src="https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/h4_icon_phone.png"
+                    data-src="https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/h4_icon_phone.png"
+                    class="elementor-animation-buzz-out attachment-full size-full lazyloaded"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -78,30 +110,32 @@
 
 .efect {
   width: 0px;
-  border-bottom:2px solid #55bbaf;
+  border-bottom: 2px solid #55bbaf;
   transition: width 1s;
 }
 .inputtext:hover .efect {
- width: 100%;
+  width: 100%;
 }
 
 .inputr {
-    font-size: 16px;
-    font-weight: 400;
-    color: rgba(136,143,150,.6);
-    background-color: transparent;
-    border-style: solid;
-    border-width: 0 0 2px;
-    border-color: rgba(188,188,188,.2);
-    padding: 10px 0;
-    height:70px;
-  
-    
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(136, 143, 150, 0.6);
+  background-color: transparent;
+  border-style: solid;
+  border-width: 0 0 2px;
+  border-color: rgba(188, 188, 188, 0.2);
+  padding: 10px 0;
+  height: 70px;
 }
 
-.efect:focus-within  {
+.efect:focus-within {
   width: 100%;
-  border-bottom:2px solid #55bbaf;
+  border-bottom: 2px solid #55bbaf;
 }
- 
+.call {
+  font-size: 24px;
+  letter-spacing: -1.2px;
+  color: #55bbaf;
+}
 </style>
