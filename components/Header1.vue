@@ -43,7 +43,7 @@
                                 <a class="nav-link js-scroll-trigger" href="#features" target="_self">BLOG</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="#reviews" target="_self">CONTACTO</a>
+                                <a class="nav-link js-scroll-trigger m-0" href="#reviews" target="_self">CONTACTO</a>
                             </li>
                         </ul>
                     </div>

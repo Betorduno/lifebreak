@@ -1,11 +1,13 @@
 <template>
   <div class="container">
-    <div class="row my-5">
-      <h4 class="subtitle text-center w-100">ABOUT US</h4>
-      <h1 class="text-center w-100 my-2 title" v-html="title"></h1>
-      <p class="text-center my-4 desc" v-html="description"></p>
-      <div class="hero-button-box box-btn">
-        <a href="#" class="theme-btn">Leam more</a>
+    <div class="row justify-content-center my-5">
+      <h4 class="subtitle text-center">ABOUT US</h4>
+      <div class="row justify-content-center">
+        <h1 class="text-centermy-2 title w-100" v-html="title"></h1>
+        <p class="text-center my-4 desc" v-html="description"></p>
+        <div class="hero-button-box box-btn">
+          <a href="#" class="theme-btn">Leam more</a>
+        </div>
       </div>
     </div>
   </div>
@@ -25,7 +27,10 @@ export default {
 </script>
 <style scoped>
  .container {
-   padding: 4em 0;
+   padding: 6em 0;
+ }
+ .row {
+  margin: 0;
  }
   .box-btn {
     width: 100%;
@@ -37,6 +42,7 @@ export default {
     font-size: 60px;
     font-weight: 500;
     letter-spacing: -3px;
+    text-align: center;
   }
   .desc {
     color: #888f96;
@@ -51,5 +57,15 @@ export default {
     font-size: 18px;
     margin-bottom: 1.5em;
     letter-spacing: 1.8px;
+  }
+  @media(max-width: 728px){
+    .desc {
+      padding: 0 4em;
+    }
+  }
+  @media(max-width: 500px){
+    .desc {
+      padding: 0 2em;
+    }
   }
 </style>

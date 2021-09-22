@@ -476,7 +476,7 @@ button:focus {
     font-weight: 400;
     color: rgb(255, 255, 255);
     font-family: "Mukta",Sans-serif;
-    background-color: rgb(85, 187, 175);
+    background-color: #55bbaf;
     border-radius: 35px;
     outline: none;
     box-shadow: rgb(153 153 153) 0px 0px 0px 0px;
@@ -493,9 +493,16 @@ button:focus {
     min-width: 0px;
     max-height: none;
     max-width: none;
+    border: 0;
     opacity: 1;
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
     transform-origin: 50% 50% 0px;
+  }
+
+  .theme-btn:hover {
+    background-color: #3f9d92;
+    border-color: #3f9d92;
+    color: white;
   }
 /*-------------------------------------------
            4. Navbar Area CSS
@@ -651,7 +658,6 @@ button:focus {
             7. Header Area
 -------------------------------------------*/
 .home-banner-area{
-    background-image: url('../img/hero-banner-bg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -666,6 +672,7 @@ button:focus {
     flex-direction: column;
     justify-content: center;
     width: 40%;
+    word-break: break-all;
 }
 .hero-area-content h1 {
     font-weight: 600;
