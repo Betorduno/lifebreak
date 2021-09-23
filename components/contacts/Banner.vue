@@ -5,7 +5,7 @@
       <div class="section-overlay d-flex">
         <div class="container">
           <div class="header-caption position-relative wow fadeInLeft d-flex">
-            <h1 class="header-caption-heading text-capitalize">Contact Us</h1>
+            <h1 class="header-caption-heading text-capitalize">{{title}}</h1>
             <nav aria-label="breadcrumb">
               <b-breadcrumb :items="items"></b-breadcrumb>
             </nav>
@@ -22,6 +22,12 @@
 <script>
 export default {
   name: "Banner",
+  props: {
+    title: {
+        type: String,
+        required: true,
+    }
+  },
   data() {
     return {
       items: [
@@ -30,7 +36,7 @@ export default {
           to: "/"
         },
         {
-          text: "Contact Us",
+          text: this.title,
           active: true
         }
       ]

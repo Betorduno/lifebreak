@@ -1,10 +1,10 @@
 <template>
-  <div class="container-fluid">
+  <div v-if="images" class="container-fluid">
     <div class="row bg-dark">
-      <div class="col-md-3 col-sm-6 col-xs-12 single_portfolio_text" :key="idx" v-for="(img, idx) in imgs">
+      <div class="col-md-3 col-sm-6 col-xs-12 single_portfolio_text" :key="idx" v-for="(img, idx) in images">
         <img :src="img" alt="" />
         <div class="portfolio_images_overlay text-center">
-          <Box thumbnail="img" :images="imgs" :idx=idx>
+          <Box thumbnail="img" :images="images" :idx=idx>
             <template v-slot:image>
               <h6 class="clrd-font">View Gallery</h6>
             </template>
@@ -18,22 +18,14 @@
 <script>
 import Lightbox from '~/components/home1/Lightbox.vue'
   export default {
+    props: {
+      images: {
+        type: Array,
+        required: true,
+      }
+    },
     components: {
       Box: Lightbox
-    },
-    data() {
-      return {
-        imgs: [
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg',
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg',
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131).jpg',
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(123).jpg',
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(118).jpg',
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(128).jpg',
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(132).jpg',
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(115).jpg'
-        ],
-      };
     }
   }
 </script>
