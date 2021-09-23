@@ -1,12 +1,12 @@
 <template>
-  <div class="container">
+  <div v-if="abt" class="container">
     <div class="row justify-content-center my-5">
-      <h4 class="subtitle text-center">ABOUT US</h4>
+      <h4 class="subtitle text-center" data-aos="fade-up" data-aos-duration="500">{{abt.subtitle}}</h4>
       <div class="row justify-content-center">
-        <h1 class="text-centermy-2 title w-100" v-html="title"></h1>
-        <p class="text-center my-4 desc" v-html="description"></p>
-        <div class="hero-button-box box-btn">
-          <a href="#" class="theme-btn">Leam more</a>
+        <h1 class="text-centermy-2 title w-100" data-aos="fade-up" data-aos-duration="800" v-html="abt.title"></h1>
+        <p class="text-center my-4 desc" data-aos="fade-up" data-aos-duration="1100" v-html="abt.description"></p>
+        <div class="hero-button-box box-btn" data-aos="fade-up" data-aos-duration="1400">
+          <a :href="abt.urlbtn" class="theme-btn">{{abt.textbtn}}</a>
         </div>
       </div>
     </div>
@@ -15,14 +15,12 @@
 <script>
 export default {
   name: 'About',
-
-  data(){
-    return {
-      title: 'Community, creativity,<br>comfort & more',
-      description: 'We are a community of bold minds who have decided to work under the same roof. Our workspace and the people around us inspire us to take action, to grow, to do better. By saying that our coworking space is sustainable and comfy we confirm that you will get 100% satisfaction from working here and making the best out of this experience.'
+  props: {
+    abt: {
+      type: Object,
+      required: true,
     }
   }
-
 }
 </script>
 <style scoped>

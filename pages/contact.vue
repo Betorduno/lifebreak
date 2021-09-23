@@ -1,7 +1,7 @@
 <template>
   <div class="home home-1" id="list-of-sections">
     <Header1/>
-    <Banner/>  
+    <Banner title="Contact"/>
     <Seccion/>
     <Infoperson/>
     <Form/>

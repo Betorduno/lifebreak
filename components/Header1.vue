@@ -100,7 +100,7 @@
 export default {
   name: 'Header1',
 
-    mounted: function () {
+    mounted() {
 
     // Menu Js
     this.$nextTick(function () {
