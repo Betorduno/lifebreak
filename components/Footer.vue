@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="row m-0 justify-content-center mt-5">
-                <p class="text-white">Copyright © 2021 - Madatto&Mosscreativo</p>
+                <p class="text-white text-center">Copyright © 2021 - Madatto&Mosscreativo</p>
             </div>
         </div>
     </footer>

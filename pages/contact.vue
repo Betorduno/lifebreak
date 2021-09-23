@@ -5,6 +5,7 @@
     <Seccion/>
     <Infoperson/>
     <Form/>
+    <Footer/>
   </div>
 </template>
 

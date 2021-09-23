@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container pt-5">
       <div class="row m-0">
         <div class="col-12 col-lg-5 pb-5">
           <p class="sub-title">REQUEST FOR CALL BACK</p>
@@ -8,89 +8,85 @@
             We're always ready to discuss coperation
           </h1>
         </div>
-        <div class="col-12 col-lg-7 m-0">
-          <h2 class="Sub-titler">I would like to discuss:</h2>
-          <span class="inputtext">
+        <div class="col-12 col-lg-7 m-0 ">
+          <h2 class="Sub-titler text-left">I would like to discuss:</h2>
+         <div class="row ">
+           <div class="col-12">
+              <span class="inputtext ">
             <div class="efect">
               <input
                 class="inputr"
                 type="text"
                 name="your-name"
                 value
-                size="62%"
+                size="40%"
                 aria-required="true"
                 aria-invalid="false"
                 placeholder="Your name"
               />
             </div>
           </span>
-
-          <span class="inputtext">
+           </div>
+         </div>
+        
+         <div class="row ">
+            <div class="col-12">
+              <span class="inputtext">
             <div class="efect">
               <input
                 class="inputr"
                 type="text"
                 name="E-mail"
                 value
-                size="62%"
+                size="40%"
                 aria-required="true"
                 aria-invalid="false"
                 placeholder="E-mail"
               />
             </div>
           </span>
-
-          <span class="inputtext">
-            <div class="efect">
+            </div>
+         </div>
+          <div class="row ">
+           <div class="col-12">
+              <span class="inputtext  ">
+            <div class="efect ">
               <input
-                class="inputr"
+                class="inputrm "
                 type="text"
                 name="Message"
                 value
-                size="62%"
+                size="40%"
                 aria-required="true"
                 aria-invalid="false"
                 placeholder="Message"
               />
             </div>
           </span>
-        </div>
-      </div>
-
-       <div class="row m-0">
-
-          <div class="col-12 col-lg-6 justify-content-xs-center mt-5 mb-5">
-            <button class="theme-btn">Submit Now</button>
-          </div>
-          <div class="col-12 col-lg-6 justify-content-lg-center">
-            <div class="row m-0">
-               <div class="col col-md-10 mt-5 mb-5 ">
-              <p class="text-right">Or call us and get free</p>
-              <h4 class="text-right">+ 844 123 456 78</h4>
-            </div>
-
-            <div class="col col-lg-2 mt-5 mb-5 ">
-              <img
-                width="55"
-                height="55"
-                src="https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/h4_icon_phone.png"
-                data-src="https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/h4_icon_phone.png"
-                class="
-                  elementor-animation-buzz-out
-                  attachment-full
-                  size-full
-                  lazyloaded
-                "
-                alt=""
-              />
-            </div>
-            </div>
+           </div>
           </div>
           
-           
         </div>
-
-
+        <div
+          class=" hero-button-box box-btn col-12 mt-5 text-md-left text-sm-center text-center pb-5"
+        >
+          <button class="theme-btn ">Submit Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid px-0">
+      <div class="row m-0 ">
+        <div class="col-12 px-0">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d24192.12784494103!2d-73.9575933!3d40.7176647!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1542103385590"
+            height="280"
+            frameborder="0"
+            style="border:0"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -119,7 +115,10 @@
   width: 0px;
   border-bottom: 2px solid #55bbaf;
   transition: width 1s;
+  
+  
 }
+
 .inputtext:hover .efect {
   width: 100%;
 }
@@ -134,6 +133,19 @@
   border-color: rgba(188, 188, 188, 0.2);
   padding: 10px 0;
   height: 70px;
+  
+  
+}
+.inputrm {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(136, 143, 150, 0.6);
+  background-color: transparent;
+  border-style: solid;
+  border-width: 0 0 2px;
+  border-color: rgba(188, 188, 188, 0.2);
+  padding: 10px 0;
+  height: 140px;
 }
 
 .efect:focus-within {
@@ -145,4 +157,11 @@
   letter-spacing: -1.2px;
   color: #55bbaf;
 }
+iframe {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  line-height: 1;
+}
+
 </style>
