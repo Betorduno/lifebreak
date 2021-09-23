@@ -17,7 +17,7 @@
     </div>
   </div>
 </template>
-<style>
+<style scoped>
 .container {
   padding: 80px 0 70px 0px;
 }
@@ -44,7 +44,7 @@
   letter-spacing: 0px;
    font-weight: 500;
   font-family: "Mukta", Sans-serif;
-  
+
 }
 @media (min-width: 1024px){
 
@@ -53,7 +53,7 @@
     font-weight: 500;
     line-height: 60px;
     letter-spacing: -3px;
-  
+
 }
 }
 </style>

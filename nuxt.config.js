@@ -1,3 +1,4 @@
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -51,9 +52,20 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
   ],
-  // router: {
-  //   base: './'
-  // },
+  router: {
+    routes: [
+      {
+        path: '/',
+        component: 'pages/index.vue',
+        name: 'index'
+      },
+      {
+        name: 'service-id',
+        path: '/service/:id?',
+        component: 'pages/service/_id.vue'
+      },
+    ]
+  },
   // // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

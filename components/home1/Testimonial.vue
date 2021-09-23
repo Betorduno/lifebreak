@@ -1,37 +1,44 @@
 <template>
-  <div class="container ">
-    <div class="row cont-desc">
+<div class=" bg-img" :style="`background-image: ${ opinions.background }`">
+  <div v-if="opinions" class="container">
+    <div class="row cont-desc ">
       <div class="col-md-6 col-sm-12 col-xs-12">
-        <h1>People Talking<br>About Us</h1>
+        <h4 class="subtitle">{{opinions.subtitle}}</h4>
+        <h1 v-html="opinions.title"></h1>
       </div>
       <div class="col-md-6 col-sm-12 col-xs-12">
-        <p>...una forma distinta de ver el trabajo, que intenta que este sea una parte integral del estilo de vida, y no compartimentos diferenciados de trabajo y ocio.
-          En LifeBreak podrás trabajar cómodamente además de disfrutar de las instalaciones y las variadas actividades que ofrecemos.
-          El propósito de nuestro coliving es crear un ambiente internacional y relaciones que vayan más allá de lo profesional, buscando interacciones de aprendizaje y colaboración entre los profesionales que lo habitan y los voluntarios internacionales que ayudan en el proyecto.</p>
+        <p v-html="opinions.desc"></p>
       </div>
     </div>
     <div class="row ">
-      <div class="col-md-4 col-sm-6 col-xs-12 my-3 type">
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg" class="img-fluid" alt="...">
-        <h5 class="title">COWORKING</h5>
-      </div>
-      <div class="col-md-4 col-sm-6 col-xs-12 my-3 type">
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg" class="img-fluid" alt="...">
-        <h5 class="title">SERVICIOS</h5>
-      </div>
-      <div class="col-md-4 col-sm-6 col-xs-12 my-3 type">
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg" class="img-fluid" alt="...">
-        <h5 class="title">ROOMS</h5>
+      <div :key="idx" v-for="(item, idx) in opinions.boxs" class="col-md-4 col-sm-6 col-xs-12 my-3 type">
+        <img :src="item.image" class="img-fluid" alt="box">
+        <h5 class="title">{{item.title}}</h5>
       </div>
     </div>
   </div>
+</div>
 </template>
 <script>
 export default {
-  name: 'Testimonial'
+  name: 'Testimonial',
+  props: {
+    opinions: {
+      type: Object,
+      required: true,
+    }
+  }
 }
 </script>
 <style scoped>
+  .bg-img {
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    background-position: right;
+    overflow: hidden;
+    z-index: 1;
+  }
+
   h1 {
     color: #1e3954;
     font-size: 60px;
@@ -39,12 +46,22 @@ export default {
     letter-spacing: -3px;
   }
 
+  .subtitle {
+    font-family: "Mukta",Sans-serif;
+    color: #888f96;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 64px;
+    letter-spacing: 1.6px;
+  }
+
   .container {
     margin-bottom: 10rem;
   }
 
   .cont-desc {
-    margin: 10rem 0 2rem 0;
+    margin: 7rem 0 2rem 0;
   }
   .type {
     position: relative;
@@ -62,5 +79,6 @@ export default {
     font-size: 24px;
     font-weight: 600;
     display: block;
+    white-space: initial;
   }
 </style>
