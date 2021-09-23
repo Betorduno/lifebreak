@@ -4,7 +4,7 @@
 
     <header id="home" class="position-relative ">
       <div v-if="imgs">
-        <div v-if=" imgs[index]" class="row d-flex flex-nowrap justify-content-center flex-row home-banner" :style="`background-image: url('${ imgs[index].image}');`">
+        <div v-if=" imgs[index]" class="row mx-0 d-flex flex-nowrap justify-content-center flex-row home-banner" :style="`background-image: url('${ imgs[index].image}');`">
           <div
             class="col-md-1 home-arrows cursor-pointer px-5 d-flex align-content-center align-items-center justify-content-center flex-row"
             @click.stop="prev"
@@ -23,7 +23,13 @@
           </div>
           <div class="col-md-10">
             <div class="container">
-              <div class="hero-area-wrapper wow fadeInLeft">
+              <div class="hero-area-wrapper d-flex flex-row wow fadeInLeft">
+                <div class="line d-flex justify-content-center align-items-center align-content-center flex-column">
+                  <div class="vertical mb-2"></div>
+                  <div class="number-indice ">
+                    <h2 class="text-center">{{index+1}}/{{vol}}</h2>
+                  </div>
+                </div>
                 <div class="hero-area-content ">
                   <h1 class="title" data-aos="fade-right">{{ imgs[index].title }}</h1>
                   <p class="subtitle" data-aos="fade-right">{{ imgs[index].subtitle }}</p>
@@ -64,6 +70,7 @@ export default {
   data() {
     return {
       index: 0,
+      vol:0,
       imgs: [
         {
           title: "Lorem insup1 loreem daftesddf",
@@ -182,6 +189,7 @@ export default {
   },
   mounted() {
     // this.intervalTime();
+    this.vol = this.imgs.length;
     window.addEventListener("keydown", this.onKeydown);
   },
   destroyed() {
@@ -191,53 +199,71 @@ export default {
 </script>
 <style lang="scss" scoped>
 
+.line {
+  display: block;
+  margin-left: -4rem;
+  margin-right: 8rem ;
+  .vertical {
+    display: block;
+    background-color: #fff;
+    width: 2px;
+    height: 150px;
+  }
+  .number-indice h2 {
+    display: block;
+    z-index: 29;
+    min-width: 37px;
+    max-width: 37px;
+    white-space: nowrap;
+    font-size: 17px;
+    line-height: 19px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    letter-spacing: 0px;
+    font-family: 'Mukta', sans-serif;
+    visibility: inherit;
+    transition: none 0s ease 0s;
+    text-align: inherit;
+    border-width: 0px;
+    margin: 0px;
+    padding: 0px;
+    min-height: 29px;
+    max-height: 29px;
+    opacity: 1;
+    transform: matrix3d(0, -1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transform-origin: 50% 50% 0px;
+  }
+}
+
 .title {
     font-family: "Mukta", sans-serif;
     z-index: 9;
-    min-width: 678px;
-    max-width: 678px;
-    white-space: nowrap;
-    font-size: 105px;
-    line-height: 105px;
+    font-size: 80px;
     font-weight: 500;
     color: rgb(255, 255, 255);
     letter-spacing: -6px;
     font-family: 'Mukta', sans-serif;
     visibility: inherit;
-    transition: none 0s ease 0s;
     text-align: left;
     border-width: 0px;
     margin: 0px;
     padding: 0px;
-    min-height: 0px;
-    max-height: none;
     opacity: 1;
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform-origin: 50% 50% 0px;
     white-space: initial;
 }
 .subtitle {
   z-index: 10;
-  min-width: 454px;
-  max-width: 454px;
   white-space: normal;
   font-size: 23px;
   line-height: 31px;
   font-weight: 300;
   color: rgb(255, 255, 255);
-  letter-spacing: 0px;
   font-family: Mukta;
-  visibility: inherit;
-  transition: none 0s ease 0s;
-  text-align: inherit;
-  border-width: 0px;
   margin: 0px;
   padding: 0px;
   min-height: 66px;
   max-height: 66px;
   opacity: 1;
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  transform-origin: 50% 50% 0px;
   white-space: initial;
 }
 
@@ -249,7 +275,12 @@ export default {
   z-index: 1;
 }
 
+.hero-area-content {
+  word-break: initial;
+}
+
 .home-banner-rg{
+  display: block;
   position: absolute;
   right: 0;
   bottom: -80px;
@@ -265,5 +296,28 @@ export default {
 .home-arrows {
   z-index: 100;
   line-height: 50px;;
+}
+
+@media(max-width: 1024px) {
+  .title {
+    font-size: 75px;
+  }
+  .line {
+    display: none;
+    .vertical {
+      display: none;
+    }
+    .number-indice h2 {
+      display: none;
+    }
+  }
+}
+@media(max-width: 768px) {
+  .home-banner-rg {
+    display: none;
+  }
+  .title {
+    font-size: 50px;
+  }
 }
 </style>

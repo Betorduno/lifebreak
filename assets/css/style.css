@@ -594,7 +594,7 @@ button:focus {
 .mobile-logo {
     position: relative;
     top: 0;
-    height: 53px;
+    width: 200px;
 }
 /*-------------------------------------------
             5. Scroll To Top Area

@@ -53,18 +53,13 @@ export default {
     'bootstrap-vue/nuxt',
   ],
   router: {
-    routes: [
-      {
-        path: '/',
-        component: 'pages/index.vue',
-        name: 'index'
-      },
-      {
-        name: 'service-id',
-        path: '/service/:id?',
-        component: 'pages/service/_id.vue'
-      },
-    ]
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/404.vue')
+      })
+    }
   },
   // // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

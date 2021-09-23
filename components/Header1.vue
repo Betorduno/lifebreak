@@ -54,10 +54,9 @@
             <!-- Mobile Menu Start -->
             <b-navbar toggleable="lg" v-b-scrollspy:list-of-sections v-b-scrollspy="20" class="mobile_menu fixed-top hidden d-none" id="mainNavMobile">
                 <b-container fluid>
-                    <b-navbar-brand to="/"><b-img :src="require('../assets/img/logo.png')" img-alt="RATH Logo" class="img-fluid mobile-logo "></b-img></b-navbar-brand>
+                    <b-navbar-brand to="/"><b-img :src="require('../assets/img/logo.png')" img-alt="RATH Logo" class="ml-4 ml-sm-4 ml-md-0 mobile-logo "></b-img></b-navbar-brand>
 
-                    <!-- <b-navbar-toggle target="nav-collapse"></b-navbar-toggle> -->
-                    <b-navbar-toggle target="nav-collapse">
+                    <b-navbar-toggle class="mr-4 mr-sm-4 mr-md-0" target="nav-collapse">
                         <template v-slot:default="{ expanded }">
                             <b-icon v-if="expanded" icon="x"></b-icon>
                             <b-icon v-else icon="list"></b-icon>
@@ -67,23 +66,26 @@
                     <b-collapse id="nav-collapse" is-nav>
                         <!-- Right aligned nav items -->
                         <b-navbar-nav class="ml-auto">
-                            <b-nav-item-dropdown to="/" text="Home" no-caret class="fas fa-angle-down">
-                                <b-dropdown-item to="/">#</b-dropdown-item>
-                                <b-dropdown-item to="/home2">#</b-dropdown-item>
-                                <b-dropdown-item to="/home3">#</b-dropdown-item>
-                                <b-dropdown-item to="/home4">#</b-dropdown-item>
-                                <b-dropdown-item to="/home5">#</b-dropdown-item>
+                            <b-nav-item href="#about">INICIO</b-nav-item>
+                            <b-nav-item-dropdown to="#" text="PROGRAMA INGLES" no-caret class="fas fa-angle-down">
+                                <b-dropdown-item to="#">#</b-dropdown-item>
+                                <b-dropdown-item to="#">#</b-dropdown-item>
+                                <b-dropdown-item to="#">#</b-dropdown-item>
+                                <b-dropdown-item to="#">#</b-dropdown-item>
+                                <b-dropdown-item to="#">#</b-dropdown-item>
                             </b-nav-item-dropdown>
-                            <b-nav-item href="#about">About</b-nav-item>
-                            <b-nav-item href="#screenshots">Screenshots</b-nav-item>
-                            <b-nav-item href="#features">Features</b-nav-item>
-                            <b-nav-item href="#reviews">Reviews</b-nav-item>
-                            <b-nav-item-dropdown href="#blog" text="Blog" no-caret class="fas fa-angle-down">
-                            <b-dropdown-item to="/bloggrid">Blog Grid</b-dropdown-item>
-                            <b-dropdown-item to="/blogclassic">Blog Classic</b-dropdown-item>
-                            <b-dropdown-item to="/blogsingle">Blog Single</b-dropdown-item>
+                             <b-nav-item-dropdown to="#" text="QUE OFRECEMOS" no-caret class="fas fa-angle-down">
+                                <b-dropdown-item to="#">#</b-dropdown-item>
+                                <b-dropdown-item to="#">#</b-dropdown-item>
+                                <b-dropdown-item to="#">#</b-dropdown-item>
+                                <b-dropdown-item to="#">#</b-dropdown-item>
+                                <b-dropdown-item to="#">#</b-dropdown-item>
                             </b-nav-item-dropdown>
-                            <b-nav-item href="#download"><span class="theme-button">Download</span></b-nav-item>
+
+                            <b-nav-item href="#screenshots">QUIENES SOMOS</b-nav-item>
+                            <b-nav-item href="#features">BLOG</b-nav-item>
+                            <b-nav-item href="#reviews">CONTACTO</b-nav-item>
+
                         </b-navbar-nav>
                     </b-collapse>
 
@@ -100,7 +102,7 @@
 export default {
   name: 'Header1',
 
-    mounted() {
+    mounted: function () {
 
     // Menu Js
     this.$nextTick(function () {
@@ -186,5 +188,20 @@ export default {
 #mainNavMobile .dropdown-item:hover, #mainNavMobile .dropdown-item:focus {
 	color: #fff;
 	background-color: transparent;
+}
+#mainNavMobile .navbar-nav li.nav-item:hover, #mainNavMobile .navbar-nav li.nav-item.active {
+    background-color: #2c303a;
+}
+
+.navbar {
+    padding: 0.5rem 0rem;
+}
+.menu-section-area #mainNavMobile.navbar {
+    padding: 0;
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 0;
 }
 </style>
