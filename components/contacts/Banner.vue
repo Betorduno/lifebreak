@@ -6,9 +6,7 @@
         <div class="container">
           <div class="header-caption position-relative wow fadeInLeft d-flex">
             <h1 class="header-caption-heading text-capitalize">{{title}}</h1>
-            <nav aria-label="breadcrumb">
-              <b-breadcrumb :items="items"></b-breadcrumb>
-            </nav>
+
           </div>
         </div>
       </div>

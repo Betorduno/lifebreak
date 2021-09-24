@@ -80,5 +80,8 @@ export default {
     font-weight: 600;
     display: block;
     white-space: initial;
+    padding: 0.5rem 1.5rem;
+    background-color: #428a70;
+    border-radius: 2rem;
   }
 </style>
