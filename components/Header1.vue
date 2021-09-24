@@ -6,7 +6,7 @@
             <b-navbar v-b-scrollspy:list-of-sections v-b-scrollspy="20" class="navbar navbar-expand-lg fixed-top d-none d-sm-none d-md-block d-lg-block d-xl-block" id="mainNav">
                 <div class="container">
                     <nuxt-link class="navbar-brand js-scroll-trigger" to="/">
-                    <b-img :src="require('../assets/img/logo.png')" img-alt="RATH Logo" class="img-fluid"></b-img>
+                    <b-img :src="require('../assets/img/logo.png')" img-alt="RATH Logo" class="img-fluid logo"></b-img>
                     </nuxt-link>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-bars"></i>
@@ -16,7 +16,7 @@
                             <li class="nav-item">
                                 <a class="nav-link js-scroll-trigger" href="/" target="_self">INICIO</a>
                             </li>
-                           <li class="nav-item dropdown"><a href="#" class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown">PROGRAMA INGLES<i class="fas fa-angle-down"></i></a>
+                           <li class="nav-item dropdown"><a href="#" class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown">PROGRAMA INGLÉS<i class="fas fa-angle-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li><nuxt-link to="/">#</nuxt-link></li>
                                     <li><nuxt-link to="/home2">#</nuxt-link></li>
@@ -132,7 +132,7 @@ export default {
 <style>
 /* Mobile Dropdown CSS */
 .menu-section-area #mainNavMobile.navbar {
-	background-color: #fff;
+	background-color: #54a66a;
 	box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
 	padding: 0 1rem;
 }

@@ -1,12 +1,12 @@
 <template>
-  <div v-if="images" class="container-fluid">
+  <div v-if="objimg" class="container-fluid">
     <div class="row bg-dark">
-      <div class="col-md-3 col-sm-6 col-xs-12 single_portfolio_text" :key="idx" v-for="(img, idx) in images">
-        <img :src="img" alt="" />
+      <div class="col-md-4 col-sm-6 col-xs-12 single_portfolio_text" :key="idx" v-for="(img, idx) in objimg">
+        <img :src="img.main" alt="" />
         <div class="portfolio_images_overlay text-center">
-          <Box thumbnail="img" :images="images" :idx=idx>
+          <Box thumbnail="img" :images="objimg[idx].images" :idx=idx>
             <template v-slot:image>
-              <h6 class="clrd-font">View Gallery</h6>
+              <h6 class="clrd-font">Ver Galeria </h6>
             </template>
           </Box>
         </div>
@@ -19,7 +19,7 @@
 import Lightbox from '~/components/home1/Lightbox.vue'
   export default {
     props: {
-      images: {
+      objimg: {
         type: Array,
         required: true,
       }
@@ -60,7 +60,7 @@ import Lightbox from '~/components/home1/Lightbox.vue'
 .portfolio_images_overlay {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(66, 138, 112, 0.8);
   padding: 20px;
   margin: 0 auto;
   top: -100%;

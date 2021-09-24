@@ -4,6 +4,7 @@
       <h4 class="subtitle text-center" data-aos="fade-up" data-aos-duration="500">{{abt.subtitle}}</h4>
       <div class="row justify-content-center">
         <h1 class="text-centermy-2 title w-100" data-aos="fade-up" data-aos-duration="800" v-html="abt.title"></h1>
+        <img width="40px" class="mt-4" src="../../assets/img/home/lifebreak.svg" alt="">
         <p class="text-center my-4 desc" data-aos="fade-up" data-aos-duration="1100" v-html="abt.description"></p>
         <div class="hero-button-box box-btn" data-aos="fade-up" data-aos-duration="1400">
           <a :href="abt.urlbtn" class="theme-btn">{{abt.textbtn}}</a>

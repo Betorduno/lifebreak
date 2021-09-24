@@ -17,7 +17,7 @@
                         </svg>
                     </div>
                 <div class="lightbox-image" @click.stop="">
-                  <img :src="images[index]">
+                  <img class="w-100" :src="images[index]">
               </div>
               <div class="cursor-pointer self-center px-8"
                    @click.stop="next()"
@@ -108,10 +108,8 @@ export default {
     background: rgba(0, 0, 0, 0.8);
 }
 .lightbox-image img {
-    width: auto;
+    width:100%;
     height: auto;
-    max-width: 100%;
-    max-height: calc(100vh - 90px);
 }
 
 .modal-header {
@@ -120,7 +118,7 @@ export default {
     border-top-right-radius: inherit;
     padding: 1rem 2rem;
     margin: 0px 4rem;
-    background-color: #00000090;
+    background-color: #428a70;
 }
 
 .modal-header .close {
