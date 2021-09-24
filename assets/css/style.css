@@ -200,11 +200,11 @@ figure {
     background-color: #f1faff!important;
 }
 .bg-blue,  #mainNav .navbar-nav .dropdown-menu a:hover, .mean-container a.meanmenu-reveal span, .home-5 .about-left-side::after, .widget-popular-tags ul li a:hover, .pagination-area .page-item.active .page-link{
-    background-color: #2ca6ef;
+    background-color: #428a70;
 }
 .color-blue, .copyright-text p a, .mean-container a.meanmenu-reveal, .breadcrumb li.breadcrumb-item > a, .share-box i, #content .share-box a:hover, #content .author-social a:hover, .widget-categories ul li a:hover, .widget-recent-posts ul li a p:hover,
 .pagination-area li .page-item:hover .page-link{
-    color: #2ca6ef;
+    color: #428a70;
 }
 .bg-deep-blue{
     background: #321d9a;
@@ -434,7 +434,7 @@ button:focus {
 .theme-button::before {
     content: "";
     position: absolute;
-    background: linear-gradient(-150deg, #74d7f8, #2ca6ef);
+    background:#428a70;
     opacity: 1;
     top: 0;
     bottom: 0;
@@ -452,7 +452,7 @@ button:focus {
 .theme-button::after {
     content: "";
     position: absolute;
-    background: linear-gradient(-150deg, #2ca6ef, #74d7f8);
+    background:#54a66a;
     opacity: 0;
     top: 0;
     bottom: 0;
@@ -610,7 +610,7 @@ button:focus {
     text-indent: -9999px;
     display: none;
     z-index: 10;
-    background: linear-gradient(-150deg, #74d7f8, #2ca6ef);
+    background: linear-gradient(-150deg, #74d7f8, #428a70);
 }
 #scroll span {
     position: absolute;
@@ -701,14 +701,14 @@ button:focus {
 }
 .hero-button-box .theme-button:last-child {
     background: #f2f6fb;
-    color: #2ca6ef!important;
+    color: #428a70!important;
     margin-left: 20px;
 }
 .hero-button-box .theme-button:last-child::before {
     background: #f2f6fb;
 }
 .hero-button-box .theme-button:last-child:hover::after {
-    background: linear-gradient(-150deg, #2ca6ef, #74d7f8);
+    background: linear-gradient(-150deg, #428a70, #74d7f8);
 }
 .hero-button-box .theme-button:last-child:hover{
     color: #fff!important;
@@ -1634,7 +1634,7 @@ header.page-banner-area .header-caption-heading {
     background-color: transparent;
     left: 10%;
     top: 24%;
-    border: 7px solid #2ca6ef;
+    border: 7px solid #428a70;
     z-index: -1;
 }
 #content blockquote {
@@ -1643,7 +1643,7 @@ header.page-banner-area .header-caption-heading {
 }
 #content .block-1 blockquote p {
     margin-bottom: 0;
-    border-left: 5px solid #2ca6ef;
+    border-left: 5px solid #428a70;
     padding-left: 14px;
     font-style: italic;
 }
