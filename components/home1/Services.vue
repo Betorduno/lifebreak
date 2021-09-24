@@ -79,7 +79,7 @@
           {
             title:'Cancha baloncesto/fútbol',
             desc: '',
-            svg: 'canchabaloncesto:futbol.svg'
+            svg: 'canchabaloncestofutbol.svg'
           },
         ]
       }
