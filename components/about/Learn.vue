@@ -3,14 +3,11 @@
     <div class="row mx-0 mg-y">
       <div class="col-12 col-sm-12 col-md-6 pr-md-5">
         <div class="row pr-md-5 mb-5">
-          <b-img class="pr-md-5" src="https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/h2-img02.png" fluid alt="Responsive image"></b-img>
+          <b-img class="pr-md-5" src="@/assets/img/somos/1.png" fluid alt="Responsive image"></b-img>
         </div>
         <div class="row">
           <div class="col-md-8 pt-md-4 text-center mb-5 mb-md-0 text-md-right">
-            <b-img class="pt-md-1" src="https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/h2-img03.png" fluid alt="Responsive image"></b-img>
-          </div>
-          <div class="col-md-4 text-center mb-5 mb-md-0 text-md-right">
-            <b-img src="https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/h2-img04.png" fluid alt="Responsive image"></b-img>
+            <b-img class="pt-md-1" src="@/assets/img/somos/2.png" fluid alt="Responsive image"></b-img>
           </div>
         </div>
       </div>

@@ -3,13 +3,13 @@
     <div class="container pt-5">
       <div class="row m-0">
         <div class="col-12 col-lg-5 pb-5">
-          <p class="sub-title">REQUEST FOR CALL BACK</p>
+          <p class="sub-title">LIFEBREAK BY IMUKO</p>
           <h1 class="main-title d-flex justify-content-center">
-            We're always ready to discuss coperation
+            Se parte de nuestra experiencia
           </h1>
         </div>
         <div class="col-12 col-lg-7 m-0 ">
-          <h2 class="Sub-titler text-left">I would like to discuss:</h2>
+          <h2 class="Sub-titler text-left">Déjanos tu contacto:</h2>
          <div class="row ">
            <div class="col-12">
               <span class="inputtext ">
@@ -22,13 +22,13 @@
                 size="40%"
                 aria-required="true"
                 aria-invalid="false"
-                placeholder="Your name"
+                placeholder="Nombre"
               />
             </div>
           </span>
            </div>
          </div>
-        
+
          <div class="row ">
             <div class="col-12">
               <span class="inputtext">
@@ -41,7 +41,7 @@
                 size="40%"
                 aria-required="true"
                 aria-invalid="false"
-                placeholder="E-mail"
+                placeholder="Email"
               />
             </div>
           </span>
@@ -59,31 +59,30 @@
                 size="40%"
                 aria-required="true"
                 aria-invalid="false"
-                placeholder="Message"
+                placeholder="Mensaje"
               />
             </div>
           </span>
            </div>
           </div>
-          
+
         </div>
         <div
           class=" hero-button-box box-btn col-12 offset-md-5 mt-5 text-md-left text-sm-center text-center pb-5"
         >
-          <button class="theme-button ">Submit Now</button>
+          <button class="theme-button ">Enviar</button>
         </div>
       </div>
     </div>
     <div class="container-fluid px-0">
       <div class="row m-0 ">
         <div class="col-12 px-0">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d24192.12784494103!2d-73.9575933!3d40.7176647!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1542103385590"
-            height="280"
-            frameborder="0"
-            style="border:0"
-            allowfullscreen
-          >
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.597202464541!2d-75.2233040848039!3d6.184626728724663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46a7999d1506eb%3A0xde7e5adc664f658b!2sLifebreak!5e0!3m2!1ses-419!2sco!4v1632513848490!5m2!1ses-419!2sco"
+          height="280"
+          style="border:0;"
+          frameborder="0"
+          allowfullscreen
+          loading="lazy">
           </iframe>
         </div>
       </div>
@@ -115,8 +114,8 @@
   width: 0px;
   border-bottom: 2px solid #55bbaf;
   transition: width 1s;
-  
-  
+
+
 }
 
 .inputtext:hover .efect {
@@ -133,8 +132,8 @@
   border-color: rgba(188, 188, 188, 0.2);
   padding: 10px 0;
   height: 70px;
-  
-  
+
+
 }
 .inputrm {
   font-size: 16px;

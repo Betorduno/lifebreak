@@ -22,7 +22,7 @@
                                     <li><nuxt-link to="/home2">#</nuxt-link></li>
                                     <li><nuxt-link to="/home3">QUIENES SOMOS</nuxt-link></li>
                                     <li><nuxt-link to="/home4">BLOG</nuxt-link></li>
-                                    <li><nuxt-link to="/home5">CONTACTO</nuxt-link></li>
+                                    <li><nuxt-link to="/home5">CONTÁCTENOS</nuxt-link></li>
                                 </ul>
                             </li>
 
@@ -32,18 +32,18 @@
                                     <li><nuxt-link to="/home2">#</nuxt-link></li>
                                     <li><nuxt-link to="/home3">#</nuxt-link></li>
                                     <li><nuxt-link to="/home4"></nuxt-link></li>
-                                    <li><nuxt-link to="/home5">CONTACTO</nuxt-link></li>
+                                    <li><nuxt-link to="/home5">CONTÁCTENOS</nuxt-link></li>
                                 </ul>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="#screenshots" target="_self">QUIENES SOMOS</a>
+                                <nuxt-link to="/about" class="nav-link js-scroll-trigger">QUIENES SOMOS</nuxt-link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="#features" target="_self">BLOG</a>
+                                <nuxt-link to="/blog" class="nav-link js-scroll-trigger">BLOG</nuxt-link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger m-0" href="#reviews" target="_self">CONTACTO</a>
+                                <nuxt-link to="/contact" class="nav-link js-scroll-trigger m-0">CONTÁCTENOS</nuxt-link>
                             </li>
                         </ul>
                     </div>
@@ -84,7 +84,7 @@
 
                             <b-nav-item href="#screenshots">QUIENES SOMOS</b-nav-item>
                             <b-nav-item href="#features">BLOG</b-nav-item>
-                            <b-nav-item href="#reviews">CONTACTO</b-nav-item>
+                            <b-nav-item href="#reviews">CONTÁCTENOS</b-nav-item>
 
                         </b-navbar-nav>
                     </b-collapse>

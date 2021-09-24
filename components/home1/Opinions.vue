@@ -129,6 +129,7 @@ export default {
 .message {
   font-family: 'Mukta', sans-serif;
   color: #888f96;
+  font-weight: 400;
   font-size: 32px;
   line-height: 1.3em;
   letter-spacing: 0.8px;
@@ -138,14 +139,16 @@ export default {
 .autor {
   font-family: 'Mukta', sans-serif;
   color: #55bbaf;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 24px;
   letter-spacing: -1px;
 }
 
 .what {
   font-family: 'Mukta', sans-serif;
   color: #888f96;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 24px;
 }
 
 .modal-header {

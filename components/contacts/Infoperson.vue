@@ -12,9 +12,11 @@
           </div>
           <div class="col-12 col-md-10 d-flex justify-content-center align-items-center align-content-center d-flex justify-content-md-start">
           <div class="elementor-icon-box-content mb-4">
-            <h3 class="elementor-icon-box-title d-flex justify-content-center d-flex justify-content-md-start"><span>Address</span></h3>
+            <h3 class="elementor-icon-box-title d-flex justify-content-center d-flex justify-content-md-start"><span>Dirección</span></h3>
             <p class="elementor-icon-box-description d-flex justify-content-center text-align-center d-flex justify-content-md-start">
-              MASH Detroit bulding, 14711 Mack Ave., Detroit, MI 48214
+              Estamos localizado<br>
+              entre Guatapé y el Peñol<br>
+              vereda la meseta
             </p>
           </div>
           </div>
@@ -32,9 +34,9 @@
           </div>
           <div class="col-12 col-md-10 d-flex justify-content-center d-flex justify-content-md-start align-items-center align-content-center">
             <div class="elementor-icon-box-content mb-4">
-              <h3 class="elementor-icon-box-title d-flex justify-content-center d-flex justify-content-md-start "><span>Phone</span></h3>
+              <h3 class="elementor-icon-box-title d-flex justify-content-center d-flex justify-content-md-start "><span>Teléfono</span></h3>
               <p class="elementor-icon-box-description d-flex justify-content-md-start">
-                123 - 456 7890 / 123 - 456 7891
+                (600) 313 462 00 98
               </p>
             </div>
          </div>
@@ -53,13 +55,13 @@
           <div class="col-12 col-md-10 d-flex justify-content-center d-flex justify-content-md-start align-items-center align-content-center mb-4">
             <div class="elementor-icon-box-content mb-4">
               <h3 class="elementor-icon-box-title d-flex d-flex justify-content-md-start justify-content-center"><span>Email</span></h3>
-              <p class="elementor-icon-box-description d-flex justify-content-md-start">contact@company.com</p>
+              <p class="elementor-icon-box-description d-flex justify-content-md-start">Lifebreakcolombia@gmail.com</p>
             </div>
           </div>
           </div>
         </div>
-      
-     </div> 
+
+     </div>
   </div>
 </template>
 <style scoped>
@@ -71,7 +73,7 @@
    font-size: 15px;
    width: 22px;
   text-align: center;
- 
+
 }
 .elements{
  margin-right: 5px;
@@ -93,14 +95,14 @@
     font-family: "Mukta",Sans-serif;
     font-weight: 400;
 }
-  
+
   .circur{
    background-color: #eef8f7;;
    padding: 20px;
    color:#55bbaf;
    border-radius: 50% ;
  }
-  
+
   .circur:hover{
    background-color: #55bbaf;
    color:#eef8f7;
@@ -112,5 +114,5 @@ export default {
 };
 </script>
 <script>
-  
+
 //  #55bbaf

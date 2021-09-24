@@ -12,14 +12,19 @@ import Opinions from '@/components/home1/Opinions.vue'
     data() {
       return {
         imgs: [
-          {message: 'Lifebreak era justo lo que necesitaba. Llevo mucho tiempo intentando mejorar mi Inglés, pero con tan solo una hora al día de clase no estaba viendo ninguna mejoría. Aquí No solo mejoré mi capacidad de hablar en inglés pero también me gusto mucho conocer y hablar con personas de diferentes países', autor: 'Jhon Doe', what: 'fundador de apple', src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg'},
-          {message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda nisi magni reiciendis eveniet commodi, ducimus ullam id suscipit ea fuga rerum sed ab in quos, aspernatur minus est! Perspiciatis, dolore.', autor: 'Jhon Doe', what: 'fundador de apple', src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg'},
-          {message: 'lorem ipsum3', autor: 'Jhon Doe', what: 'fundador de apple', src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131).jpg'},
-          {message: 'lorem ipsum4', autor: 'Jhon Doe', what: 'fundador de apple', src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(123).jpg'},
-          {message: 'lorem ipsum5', autor: 'Jhon Doe', what: 'fundador de apple', src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(118).jpg'},
-          {message: 'lorem ipsum6', autor: 'Jhon Doe', what: 'fundador de apple', src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(128).jpg'},
-          {message: 'lorem ipsum7', autor: 'Jhon Doe', what: 'fundador de apple', src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(132).jpg'},
-          {message: 'lorem ipsum8', autor: 'Jhon Doe', what: 'fundador de apple', src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(115).jpg'}
+          {
+            message: '“For my work, I really needed a dedicated space that made it easy to focus. Not only did Lifebreak offer that, but I also really enjoyed the way I spent my off time. The yoga classes, the conversations, the nature, and the food...all of it made the place hard to leave.”',
+            autor: 'Alexis Haakonson',
+            what: 'Digital nomad',
+            src: require('@/assets/img/testimonial/testimonila01.png')
+          },
+          {
+            message: '“Siempre había tenido ganas de viajar al extranjero para vivir en un lugar que se hable Inglés. Pensé que iba a tener que pagar Millones para visitar la USA o Canada y poder tener esta experiencia. Pero la encontré aquí en Colombia. Super recomendado sin importar que nivel de Inglés tengas.”',
+            autor: 'Felipe Toro',
+            what: 'Emprendedor',
+            src: require('@/assets/img/testimonial/testimonila02.png')
+          },
+
         ],
       };
     }

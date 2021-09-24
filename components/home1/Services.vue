@@ -92,7 +92,7 @@
     height: 300px;
   }
   .cont-efect:hover {
-    background-color: #54a66a;
+    background-color: #54a66a70;
   }
 
   .image-box-img {

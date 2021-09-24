@@ -1,7 +1,7 @@
 <template>
   <div class="home home-1" id="list-of-sections">
     <Header1 />
-    <Banner title="Blog"/>
+    <Banner :data="banner"/>
     <BlogClassicSection />
     <Footer />
   </div>
@@ -21,6 +21,14 @@ export default {
     Banner,
     BlogClassicSection,
     Footer,
+  },
+  data() {
+    return {
+      banner: {
+        title: 'Blog',
+        image: require('~/assets/img/contact/contactbanner.jpg')
+      }
+    }
   }
 }
 </script>

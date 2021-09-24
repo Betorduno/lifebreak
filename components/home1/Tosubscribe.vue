@@ -1,15 +1,15 @@
 <template>
   <div class="d-flex justify-content-center bg-blue parallax">
     <div class="row m-0 d-flex justify-content-center flex-column my-5">
-      <h2 class="text-center title mb-4">Connect with us</h2>
-      <p class="text-center desc mb-4">Subcribe to our e-mail list and stay up-to-date with all our news.</p>
+      <h2 class="text-center title mb-4">Contacta con nosotros</h2>
+      <p class="text-center desc mb-4">Subcríbete a nuestro boletin para mas información.</p>
     <b-form  @submit.stop.prevent>
       <div class="p-2 row text-center d-flex justify-content-center flex-row designForm"  id="feedback-user">
         <div class="col-xs-4 col-sm-4 col-md-8">
-          <b-form-input class="input-email" autocomplete="off" v-model="email" placeholder="Sign up to your newletter">
+          <b-form-input class="input-email" autocomplete="off" v-model="email" placeholder="">
         </b-form-input></div>
         <div class="col-xs-4 col-sm-4 col-md-2">
-          <b-button class="theme-btn">Sign Up</b-button>
+          <b-button class="theme-btn">Enviar</b-button>
         </div>
       </div>
 
@@ -43,7 +43,7 @@
 
   .parallax {
     /* The image used */
-    background-image: url("https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/h2-bg2.jpg") !important;
+    background-image: url("@/assets/img/bannersubcribe.jpg") !important;
 
     /* Set a specific height */
     min-height: 500px;
@@ -74,8 +74,9 @@
   }
 
   .theme-btn {
-    padding: 0 28px;
+    padding: 0;
     border: 0;
+    width: 100px;
     line-height: 50px;
   }
   .theme-btn:hover {

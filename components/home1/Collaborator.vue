@@ -2,19 +2,29 @@
 <div>
   <div v-if="opinions" class="container">
     <div class="row cont-desc ">
-      <div class="col-md-6 col-sm-12 col-xs-12">
+      <div class="col-md-6 col-sm-12 col-xs-12 position-relative">
+         <img  class="iconflex"src="../../assets/img/iconflex.png" alt="">
         <h4 class="subtitle">{{opinions.subtitle}}</h4>
         <h1 v-html="opinions.title"></h1>
       </div>
       <div class="col-md-6 col-sm-12 col-xs-12">
-        <p v-html="opinions.desc"></p>
+        <p class="desc" v-html="opinions.desc"></p>
       </div>
     </div>
     <div class="row ">
-      <div :key="idx" v-for="(item, idx) in opinions.boxs" class="col-md-4 col-sm-6 col-xs-12 my-3 type">
-        <img :src="item.image" class="img-fluid" alt="box">
-        <h5 class="title">{{item.title}}</h5>
+      <div class="col-md-4 col-sm-6 col-xs-12 my-3 " :key="idx" v-for="(item, idx) in opinions.boxs">
+        <div class="row type">
+          <img :src="item.image" class="img-fluid" alt="box">
+          <h5 class="title mt-4">{{item.title}}</h5>
+        </div>
+        <div class="row py-4 pl-4 pl-md-2 text-center pr-4">
+          <p class="desc">{{item.desc}}</p>
+        </div>
       </div>
+    </div>
+    <div class="row">
+      <h1 class="mb-5 px-4 px-md-0">{{opinions.titleBanner}}</h1>
+      <b-img class="px-2 px-sm-0 px-md-0" src="../../assets/img/somos/banner-voluntarios.jpg" fluid alt="Responsive image"></b-img>
     </div>
   </div>
 </div>
@@ -31,13 +41,6 @@ export default {
 }
 </script>
 <style scoped>
-  .bg-img {
-    background-repeat: no-repeat;
-    background-size: 50% 100%;
-    background-position: right;
-    overflow: hidden;
-    z-index: 1;
-  }
 
   h1 {
     color: #1e3954;
@@ -45,7 +48,19 @@ export default {
     font-weight: 500;
     letter-spacing: -3px;
   }
-
+  .desc {
+    color: #888f96;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.667;
+  }
+  .iconflex  {
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 15rem;
+    z-index: -1;
+  }
   .subtitle {
     font-family: "Mukta",Sans-serif;
     color: #888f96;
@@ -83,5 +98,6 @@ export default {
     padding: 0.5rem 1.5rem;
     background-color: #428a70;
     border-radius: 2rem;
+    text-transform: uppercase;
   }
 </style>
