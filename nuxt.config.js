@@ -16,7 +16,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: './favicon.ico' },
       { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" },
       { href:"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel:"stylesheet", integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin:"anonymous"},
     ],
@@ -53,18 +53,13 @@ export default {
     'bootstrap-vue/nuxt',
   ],
   router: {
-    routes: [
-      {
-        path: '/',
-        component: 'pages/index.vue',
-        name: 'index'
-      },
-      {
-        name: 'service-id',
-        path: '/service/:id?',
-        component: 'pages/service/_id.vue'
-      },
-    ]
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/404.vue')
+      })
+    }
   },
   // // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

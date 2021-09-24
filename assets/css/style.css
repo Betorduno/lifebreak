@@ -476,7 +476,7 @@ button:focus {
     font-weight: 400;
     color: rgb(255, 255, 255);
     font-family: "Mukta",Sans-serif;
-    background-color: #55bbaf;
+    background-color: #54a66a;
     border-radius: 35px;
     outline: none;
     box-shadow: rgb(153 153 153) 0px 0px 0px 0px;
@@ -523,7 +523,7 @@ button:focus {
     transition: all ease .6s;
 }
 #mainNav.navbar-shrink {
-    background-color: #fff;
+    background-color: rgba(66,138,112,0.8);
     box-shadow: 0 0 9px 3px rgba(50,29,154,.2);
 }
 #mainNav .navbar-brand {
@@ -539,11 +539,13 @@ button:focus {
     color: #fff;
 }
 #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link.active {
-    color: #321d9a!important;
+    color: #fff!important;
+    font-weight: bold;
 }
 #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link {
-    color: #2c303a;
+    color: #fff;
 }
+
 #mainNav ul li.nav-item:last-child a.nav-link {
     padding: 10px 40px 14px;
     margin-left: 15px;
@@ -594,7 +596,10 @@ button:focus {
 .mobile-logo {
     position: relative;
     top: 0;
-    height: 53px;
+    width: 200px;
+}
+.logo {
+    width: 200px;
 }
 /*-------------------------------------------
             5. Scroll To Top Area

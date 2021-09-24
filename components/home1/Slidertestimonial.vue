@@ -12,7 +12,7 @@ import Opinions from '@/components/home1/Opinions.vue'
     data() {
       return {
         imgs: [
-          {message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda nisi magni reiciendis eveniet commodi, ducimus ullam id suscipit ea fuga rerum sed ab in quos, aspernatur minus est! Perspiciatis, dolore.', autor: 'Jhon Doe', what: 'fundador de apple', src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg'},
+          {message: 'Lifebreak era justo lo que necesitaba. Llevo mucho tiempo intentando mejorar mi Inglés, pero con tan solo una hora al día de clase no estaba viendo ninguna mejoría. Aquí No solo mejoré mi capacidad de hablar en inglés pero también me gusto mucho conocer y hablar con personas de diferentes países', autor: 'Jhon Doe', what: 'fundador de apple', src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg'},
           {message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda nisi magni reiciendis eveniet commodi, ducimus ullam id suscipit ea fuga rerum sed ab in quos, aspernatur minus est! Perspiciatis, dolore.', autor: 'Jhon Doe', what: 'fundador de apple', src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg'},
           {message: 'lorem ipsum3', autor: 'Jhon Doe', what: 'fundador de apple', src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131).jpg'},
           {message: 'lorem ipsum4', autor: 'Jhon Doe', what: 'fundador de apple', src: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(123).jpg'},
