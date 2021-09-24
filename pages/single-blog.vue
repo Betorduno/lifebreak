@@ -1,7 +1,7 @@
 <template>
   <div class="home home-1" id="list-of-sections">
     <Header1 />
-    <Banner title="Blogs"/>
+    <Banner :data="banner"/>
     <BlogSinglePageLayout />
     <Footer />
   </div>
@@ -22,6 +22,14 @@ export default {
     BlogSinglePageLayout,
     Footer,
   },
+  data(){
+    return{
+      banner: {
+        title: 'Programa Inglés',
+        image: require('~/assets/img/contact/contactbanner.jpg')
+      }
+    }
+  }
 
 }
 </script>

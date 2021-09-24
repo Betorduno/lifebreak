@@ -4,21 +4,7 @@
     <footer class="copyrightarea">
         <div class="">
             <div class="row m-0 d-flex justify-content-center">
-                <img class="logo" src="https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/logo_02.png" alt="">
-            </div>
-            <div class="row m-0 my-5 justify-content-center p-md-5 p-xs-2">
-                <div class="col-xs-12 col-md-2 text-center">
-                    <nuxt-link to="#" class="links">Inicio</nuxt-link>
-                </div>
-                <div class="col-xs-12 col-md-2  text-center">
-                    <nuxt-link to="#" class="links">Programa Ingles</nuxt-link>
-                </div>
-                <div class="col-xs-12 col-md-2  text-center">
-                    <nuxt-link to="#" class="links">Blog</nuxt-link>
-                </div>
-                <div class="col-xs-12 col-md-2  text-center">
-                    <nuxt-link to="#" class="links">Contacto</nuxt-link>
-                </div>
+                <img class="logo mb-5" src="../assets/img/logo.svg" alt="">
             </div>
             <div class="row m-0 flex-nowrap align-items-center align-content-center content">
                 <div class="col-md-5">
@@ -27,16 +13,13 @@
                 <div class="col-md-2">
                     <div class="row f d-flex flex-nowrap justify-content-center align-items-center align-content-center">
                         <div class="col-2 text-center">
-                            <i class="fab fa-google-plus"></i>
+                            <a target="blank" href="https://instagram.com/lifebreak_guatape?utm_medium=copy_link"><i class="fab fa-instagram"></i></a>
                         </div>
                         <div class="col-2 text-center">
-                            <i class="fab fa-facebook"></i>
+                            <a target="blank" href="https://www.facebook.com/Lifebreak_Guatape-100609869056515"><i class="fab fa-facebook"></i></a>
                         </div>
                         <div class="col-2 text-center">
-                            <i class="fab fa-twitter"></i>
-                        </div>
-                        <div class="col-2 text-center">
-                            <i class="fab fa-youtube"></i>
+                            <a target="blank" href="#"><i class="fab fa-youtube"></i></a>
                         </div>
 
                     </div>
@@ -46,7 +29,7 @@
                 </div>
             </div>
             <div class="row m-0 justify-content-center mt-5">
-                <p class="text-white text-center">Copyright © 2021 - Madatto&Mosscreativo</p>
+                <p class="text-white text-center">Copyright © 2021 - Madatto&MOSScreativo</p>
             </div>
         </div>
     </footer>
@@ -62,10 +45,7 @@ export default {
 </script>
 <style scoped>
     .copyrightarea {
-        background-color: #1e3954;
-        background-image: url(https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/elipse.png);
-        background-position: bottom left;
-        background-repeat: no-repeat;
+        background-color: #428a70;
         padding: 120px 0;
     }
 
@@ -78,7 +58,7 @@ export default {
        color: #fff;
      }
     .divisor {
-        border-top: 1px solid rgba(255,255,255,.2);
+        border-top: 1px solid #ffffff80;
         width:100%
     }
     .content {
@@ -86,7 +66,7 @@ export default {
     }
 
     i {
-        color: #949ca6;
+        color: #fff;
         font-size: 20px;
     }
 

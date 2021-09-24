@@ -1,7 +1,7 @@
 <template>
   <div class="home home-1" id="list-of-sections">
     <Header1/>
-    <Banner title="Our Services"/>
+    <Banner :data="banner"/>
     <Ourbenefits :ourbenefit="benefits"/>
     <Offer :offeri="offeri"/>
     <Gallery :images="imgs"/>
@@ -111,6 +111,10 @@ export default {
           }
         ],
         background: 'url(https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/bgoc-1.png)'
+      },
+      banner: {
+        title: 'Programa Inglés',
+        image: require('~/assets/img/contact/contactbanner.jpg')
       }
     }
   }

@@ -170,15 +170,15 @@ export default {
         boxs: [
           {
             title: 'COWORKING',
-            image:'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg'
+            image:require('@/assets/img/home/s1.jpg')
           },
           {
             title: 'SERVICIOS',
-            image:'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg'
+            image: require('@/assets/img/home/s2.jpg')
           },
           {
             title: 'ROOMS',
-            image:'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg'
+            image: require('@/assets/img/home/s3.jpg')
           }
         ],
         background: 'url(https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/bgoc-1.png)'

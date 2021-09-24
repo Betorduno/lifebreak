@@ -1,7 +1,7 @@
 <template>
   <div class="home home-1" id="list-of-sections">
     <Header1/>
-    <Banner title="Contact"/>
+    <Banner :data="contact"/>
     <Seccion/>
     <Infoperson/>
     <Form/>
@@ -25,6 +25,14 @@ export default {
     Infoperson,
     Form,
     Footer
+  },
+  data() {
+    return {
+      contact:{
+        title: 'Contáctenos',
+        image: require('~/assets/img/contact/contactbanner.jpg')
+      }
+    }
   }
 }
 </script>
