@@ -452,7 +452,7 @@ button:focus {
 .theme-button::after {
     content: "";
     position: absolute;
-    background:#54a66a;
+    background:#428a70;
     opacity: 0;
     top: 0;
     bottom: 0;
@@ -696,7 +696,6 @@ button:focus {
     border-radius: 5px;
 }
 .hero-button-box .theme-button{
-    box-shadow: 0 6px 15px 0 rgba(44,166,239,.5);
     line-height: 15px;
     padding: 16px 30px;
 }
@@ -705,15 +704,15 @@ button:focus {
     padding: 16px 30px;
 }
 .hero-button-box .theme-button:last-child {
-    background: #f2f6fb;
-    color: #428a70!important;
+    background: #428a70;
+    color:#fff !important;
     margin-left: 20px;
 }
 .hero-button-box .theme-button:last-child::before {
-    background: #f2f6fb;
+    background: #54a66a;
 }
 .hero-button-box .theme-button:last-child:hover::after {
-    background: linear-gradient(-150deg, #428a70, #74d7f8);
+    background: #54a66a;
 }
 .hero-button-box .theme-button:last-child:hover{
     color: #fff!important;

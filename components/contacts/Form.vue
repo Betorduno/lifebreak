@@ -68,9 +68,9 @@
           
         </div>
         <div
-          class=" hero-button-box box-btn col-12 mt-5 text-md-left text-sm-center text-center pb-5"
+          class=" hero-button-box box-btn col-12 offset-md-5 mt-5 text-md-left text-sm-center text-center pb-5"
         >
-          <button class="theme-btn ">Submit Now</button>
+          <button class="theme-button ">Submit Now</button>
         </div>
       </div>
     </div>
