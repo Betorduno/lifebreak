@@ -41,81 +41,17 @@
 
     </div>
     <!-- Block 1-->
-
-    <!-- Block 2-->
-    <div class="block-2">
-      <div class="share-article d-flex justify-content-between">
-        <div class="share-box para-color"><i class="fas fa-tag"></i>
-          <PopularTag v-for="tag in tags" :key="tag.id" :tagTitle="tag.tagTitle" />
-        </div>
-
-        <div class="share-box"><button><i class="fas fa-share-alt"></i> <span>{{shareText}}</span></button></div>
-      </div>
-      <div class="about-author d-flex justify-content-between align-items-center">
-        <div class="author-img"><router-link to="#!"><img :src="authorAvatar" alt="avatar"></router-link></div>
-        <div class="author-details">
-          <h4 class="author-name color-orange">{{authorName}}</h4>
-          <p>{{aboutAuthor}}</p>
-          <div class="author-social">
-            <AuthorSocialLinkItem v-for="icon in icons" :key="icon.id" :iconClass="icon.iconClass" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Block 2-->
-
-    <!-- Block 3-->
-    <div class="block-3">
-      <!-- Leave a Comment Area-->
-      <div class="leave-comment-area">
-        <h2 class="para-color">Leave a Comment</h2>
-
-        <form action="#">
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="form-group">
-                  <label for="cus_name">Full Name <span>*</span></label>
-                  <input type="text" class="form-control" id="cus_name" required>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="form-group">
-                  <label for="cus_email">Email <span>*</span></label>
-                  <input type="email" class="form-control" id="cus_email" required>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="form-group">
-                  <label for="cus_website">Website</label>
-                  <input type="text" class="form-control" id="cus_website">
-              </div>
-            </div>
-            <div class="col-sm-12">
-              <div class="form-group nessage-text">
-                  <label for="cus_comment">Write Comment <span>*</span></label>
-                  <textarea name="message" rows="3" class="form-control" id="cus_comment" required></textarea>
-              </div>
-              <div class="contact-sub-btn">
-                  <button type="button" class="btn theme-button text-capitalize">Submit Comment</button>
-              </div>
-            </div>
-          </div>
-        </form>        
-      </div>
-      <!-- Leave a Comment Area-->
-
-    </div>
-    <!-- Block 3-->
 </div>
 </template>
 
 <script>
 import PopularTag from '@/components/blogs/PopularTag'
 import AuthorSocialLinkItem from '@/components/blogs/AuthorSocialLinkItem'
+import { gql } from 'graphql-request';
 
 export default {
   name: 'SinglePageBlog',
-  
+
   components: {
     PopularTag,
     AuthorSocialLinkItem
@@ -123,42 +59,95 @@ export default {
 
   data() {
     return {
-      image: require('../../assets/img/blog-page-img/blog-page-img-1.jpg'),
-      altText: 'Blog Thumb',
-      title: 'Silly Mistakes People Do Starting a Startup',
-      publishBy: 'Admin',
-      publishDate: '06 Sep, 2019',
-      commentNumber: '07 Comments ',
-      content1: 'Nulla quntum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos.',
-      quoteText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nos trud exercitation ulla.',
-      content2: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolor em ipsum quia dolor sit amet, consectetur adipisci velit sed.',
-      content3: 'Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam ali quam quaerat vo luptatem. Ut enim ad minima veniam, quis nostrum exerci tationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.',
-      content4: 'Accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium vo luptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint oc caecati cupiditate non provident, similique sunt in culpa qui officia deserunt molli tia animi, id est laborum et dolorum fuga.',
-      mediaImage: require('../../assets/img/blog-page-img/blog-details-media-img1.jpg'),
-      mediaAltText: 'blog media',
-      mediaTitle: 'Neque porro quisquam est',
-      
-      tags: [
-        {id: 1, tagTitle: 'Agency,'},
-        {id: 2, tagTitle: 'Branding,'},
-        {id: 3, tagTitle: 'UX,'},
-        {id: 4, tagTitle: 'App,'},
-        {id: 5, tagTitle: 'Article'}
-      ],
-      
-      shareText: 'Share this article',
-      authorAvatar: require('../../assets/img/blog-page-img/blogger.jpg'),
-      authorName: 'Jennifer Lee',
-      aboutAuthor: 'Ut enim ad minima veniam, quis nostrum exerci tationem ullam corporis suscipit den ser mori ten laboriosam, nisi ut aliquid ex ea commodi consequatur.',
-
-      icons: [
-        {id: 1, iconClass: 'fab fa-facebook-f'},
-        {id: 2, iconClass: 'fab fa-twitter'},
-        {id: 3, iconClass: 'fab fa-linkedin-in'},
-        {id: 4, iconClass: 'fab fa-pinterest"'}
-      ],
-
+      image: '',
+      altText: '',
+      title: '',
+      publishBy: '',
+      publishDate: '',
+      commentNumber: '',
+      content1: '',
+      quoteText: '',
+      content2: '',
+      content3: '',
+      content4: '',
+      mediaImage: '',
+      mediaAltText: '',
+      mediaTitle: ''
     }
+  },
+  created() {
+    this.fetchData();
+  },
+  watch: {
+    $route: 'fetchData',
+  },
+  methods: {
+    async fetchData() {
+      this.service = null
+      try {
+        const data = await this.$graphcms.request(
+          gql`
+            query getBlog($id: ID!) {
+              blog(where: { id: $id }) {
+                titlemain
+                contentblog {
+                  ... on BllogPaginaSimple {
+                    id
+                    image {
+                      url
+                    }
+                    mediaImage {
+                      url
+                    }
+                    title
+                    altText
+                    publishBy
+                    showContent1
+                    showContent2
+                    showContent3
+                    showQuote
+                    showcontent4
+                    content1
+                    content2
+                    content3
+                    content4
+                    quoteText {
+                      text
+                    }
+                  }
+                }
+                publishDate
+              }
+            }
+          `,
+          {
+            id: this.$route.params.singleblog,
+          }
+        );
+        this.image= data.blog.contentblog.image.url,
+        this.altText= data.blog.contentblog.altText,
+        this.title= data.blog.contentblog.title,
+        this.publishBy= data.blog.contentblog.publishBy,
+        this.publishDate= data.blog.publishDate,
+        this.commentNumber= '',
+        this.content1= data.blog.contentblog.content1,
+        this.quoteText= data.blog.contentblog.quoteText.text,
+        this.content2= data.blog.contentblog.content2,
+        this.content3= data.blog.contentblog.content3,
+        this.content4= data.blog.contentblog.content4,
+        this.mediaImage= data.blog.contentblog.mediaImage.url,
+        this.mediaAltText= data.blog.contentblog.altText,
+        this.mediaTitle= data.blog.
+        console.log('esta es la data de blog= ', data.blog);
+      } catch (e) {
+        // handle error
+        console.log('hola')
+        // window.location.href="/"
+      }
+    },
+  },
+  mounted() {
+    console.log('>>>>>>>>>>>>>>>>>>>>',this.$route.params.singleblog)
   }
 }
 </script>

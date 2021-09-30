@@ -10,67 +10,44 @@
         </div>
         <div class="col-12 col-lg-7 m-0 ">
           <h2 class="Sub-titler text-left">Déjanos tu contacto:</h2>
-         <div class="row ">
-           <div class="col-12">
-              <span class="inputtext ">
-            <div class="efect">
-              <input
-                class="inputr"
-                type="text"
-                name="your-name"
-                value
-                size="40%"
-                aria-required="true"
-                aria-invalid="false"
-                placeholder="Nombre"
-              />
+           <b-form  @submit.stop.prevent="onSubmit" id="form-all">
+            <div class="inputtext ">
+                <input v-model="name" class="inputr" type="text" placeholder="Nombre"
+                />
+                <div class="efect">
+              </div>
             </div>
-          </span>
-           </div>
-         </div>
 
-         <div class="row ">
-            <div class="col-12">
-              <span class="inputtext">
-            <div class="efect">
-              <input
-                class="inputr"
-                type="text"
-                name="E-mail"
-                value
-                size="40%"
-                aria-required="true"
-                aria-invalid="false"
-                placeholder="Email"
-              />
+            <div class="inputtext ">
+                <input v-model="email" type="email" class="inputr" placeholder="E-mail"
+                />
+                <div class="efect">
+                </div>
             </div>
-          </span>
-            </div>
-         </div>
-          <div class="row ">
-           <div class="col-12">
-              <span class="inputtext  ">
-            <div class="efect ">
-              <input
-                class="inputrm "
-                type="text"
-                name="Message"
-                value
-                size="40%"
-                aria-required="true"
-                aria-invalid="false"
-                placeholder="Mensaje"
-              />
-            </div>
-          </span>
-           </div>
-          </div>
 
-        </div>
-        <div
-          class=" hero-button-box box-btn col-12 offset-md-5 mt-5 text-md-left text-sm-center text-center pb-5"
-        >
-          <button class="theme-button ">Enviar</button>
+            <div class="inputtext ">
+
+                <input v-model="message" class="inputr" type="text" placeholder="Mensaje"
+                />
+              <div class="efect">
+              </div>
+            </div>
+            <div class="my-5">
+              <button t ype="submit" class="theme-button ">Enviar</button>
+            </div>
+          </b-form>
+          <b-alert
+              id="all-status"
+              :show="dismissCountDown"
+              dismissible
+              :variant="typealert"
+              @dismissed="dismissCountDown=0"
+              @dismiss-count-down="countDownChanged"
+            >
+              {{msg}}
+          </b-alert>
+
+
         </div>
       </div>
     </div>
@@ -89,6 +66,70 @@
     </div>
   </div>
 </template>
+<script>
+  export default {
+    name: 'Tosubscribe',
+    data() {
+      return {
+        name: '',
+        email: '',
+        message: '',
+        msg:'',
+        dismissSecs: 5,
+        dismissCountDown: 0,
+        typealert:'info'
+      }
+    },
+    computed: {
+      validation() {
+        if (this.email.length > 0) {
+          const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return re.test(this.email)
+        }
+      }
+    },
+    methods: {
+      onSubmit(){
+        let status = document.getElementById("all-status");
+        let form = document.getElementById("form-all");
+          if (this.email != '' && this.email != null && this.name != '' && this.message != '') {
+            fetch('https://formspree.io/f/mvodypea', {
+              method: 'POST',
+              body: JSON.stringify({
+                name: this.name,
+                email: this.email,
+                message: this.message}),
+              headers: {
+                  'Accept': 'application/json'
+              }
+            }).then(response => {
+              form.reset();
+              this.typealert ='success'
+              this.msg ="Gracias por tu suscripción!"
+              this.showAlert();
+            }).catch(error => {
+              this.typealert ='danger'
+              this.msg='Oops! There was a problem submitting your form'
+              this.showAlert();
+            });
+          }
+          else {
+            this.msg = "Llene todos los campos del formulario!";
+            this.typealert ='danger';
+            this.showAlert();
+          }
+        },
+
+        countDownChanged(dismissCountDown) {
+          this.dismissCountDown = dismissCountDown;
+        },
+        showAlert() {
+          this.dismissCountDown = this.dismissSecs;
+        }
+
+    }
+  }
+</script>
 <style scoped>
 .sub-title {
   font-size: 16px;
@@ -114,8 +155,6 @@
   width: 0px;
   border-bottom: 2px solid #55bbaf;
   transition: width 1s;
-
-
 }
 
 .inputtext:hover .efect {
@@ -132,8 +171,7 @@
   border-color: rgba(188, 188, 188, 0.2);
   padding: 10px 0;
   height: 70px;
-
-
+  width: 100%;
 }
 .inputrm {
   font-size: 16px;
@@ -147,9 +185,13 @@
   height: 140px;
 }
 
-.efect:focus-within {
+.inputtext:focus-within .inputr {
   width: 100%;
   border-bottom: 2px solid #55bbaf;
+}
+.inputtext:focus-within .efect {
+  width: 0%;
+  border-bottom: 0;
 }
 .call {
   font-size: 24px;
@@ -162,5 +204,6 @@ iframe {
   margin: 0;
   line-height: 1;
 }
+
 
 </style>

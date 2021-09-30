@@ -20,7 +20,7 @@
 
     <!-- Classic Blog Read More Button Start -->
     <div class="classic-blog-button-box">
-      <router-link to="/single-blog" class="theme-button">{{btnText}}</router-link>
+      <router-link :to="`/blogsingle/${id}`" class="theme-button">{{btnText}}</router-link>
       <div class="share-box"><button><i class="fas fa-share-alt"></i> <span>{{shareText}}</span></button></div>
     </div>
     <!-- Classic Blog Read More Button End -->
@@ -41,7 +41,8 @@ export default {
     commentNumber: String,
     description: String,
     btnText: String,
-    shareText: String
+    shareText: String,
+    id: String
   }
 }
 </script>

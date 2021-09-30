@@ -16,7 +16,7 @@
         <div class="col-xs-12 col-sm-12 col-md-6">
           <div :key="idx" v-for="(i, idx) in offeri.gallery"  :class="`row ${ idx< Math.round(offeri.gallery.length/2) ? '': 'hide' }`">
             <div class="row mx-0 img-hover-zoom">
-              <b-img :src="i.image" fluid alt="image"></b-img>
+              <b-img :src="i.image.url" fluid alt="image"></b-img>
             </div>
             <div class="row mx-0 py-5 px-1 bg-box justify-content-center flex-column w-100">
               <h1 class="gall-title text-center">{{i.title}}</h1>
@@ -27,7 +27,7 @@
         <div class="col-xs-12 col-sm-12 col-md-6 mg-top">
           <div :key="idx" v-for="(i, idx) in offeri.gallery"  :class="`row ${ idx >= Math.round(offeri.gallery.length/2) ? '': 'hide' }`">
             <div class="row mx-0 img-hover-zoom">
-              <b-img :src="i.image" fluid alt="image"></b-img>
+              <b-img :src="i.image.url" fluid alt="image"></b-img>
             </div>
             <div class="row mx-0 py-5 px-1 bg-box justify-content-center flex-column w-100">
               <h1 class="gall-title text-center">{{i.title}}</h1>

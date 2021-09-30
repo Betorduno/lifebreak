@@ -1,10 +1,10 @@
 <template>
   <div v-if="objimg" class="container-fluid">
-    <div class="row bg-dark">
+    <div class="row">
       <div class="col-md-4 col-sm-6 col-xs-12 single_portfolio_text" :key="idx" v-for="(img, idx) in objimg">
-        <img :src="img.main" alt="" />
+        <img :src="img.imagemain.url" alt="" />
         <div class="portfolio_images_overlay text-center">
-          <Box thumbnail="img" :images="objimg[idx].images" :idx=idx>
+          <Box thumbnail="img" :images="objimg[idx].galleryimage" :idx=idx>
             <template v-slot:image>
               <h6 class="clrd-font">Ver Galeria </h6>
             </template>
@@ -20,7 +20,7 @@ import Lightbox from '~/components/home1/Lightbox.vue'
   export default {
     props: {
       objimg: {
-        type: Array,
+        type: Object,
         required: true,
       }
     },

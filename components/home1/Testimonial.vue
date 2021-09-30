@@ -12,7 +12,7 @@
     </div>
     <div class="row ">
       <div :key="idx" v-for="(item, idx) in opinions.boxs" class="col-md-4 col-sm-6 col-xs-12 my-3 type">
-        <img :src="item.image" class="img-fluid" alt="box">
+        <img :src="item.image.url" class="img-fluid" alt="box">
         <h5 class="title">{{item.title}}</h5>
       </div>
     </div>

@@ -3,19 +3,20 @@
     <div class="row m-0 d-flex justify-content-center flex-column my-5">
       <h2 class="text-center title mb-4">Contacta con nosotros</h2>
       <p class="text-center desc mb-4">Subcríbete a nuestro boletin para mas información.</p>
-    <b-form  @submit.stop.prevent>
+    <b-form  @submit.stop.prevent="postData" id="form-all">
       <div class="p-2 row text-center d-flex justify-content-center flex-row designForm"  id="feedback-user">
         <div class="col-xs-4 col-sm-4 col-md-8">
           <b-form-input class="input-email" autocomplete="off" v-model="email" placeholder="">
         </b-form-input></div>
         <div class="col-xs-4 col-sm-4 col-md-2">
-          <b-button class="theme-btn">Enviar</b-button>
+          <b-button  type="submit" class="theme-btn">Enviar</b-button>
         </div>
       </div>
 
       <b-form-invalid-feedback :state="validation">
         El email ingresado no es valido.
       </b-form-invalid-feedback>
+      <p id="all-status"></p>
      </b-form>
   </div>
   </div>
@@ -36,6 +37,28 @@
           return re.test(this.email)
         }
       }
+    },
+    methods: {
+      postData(){
+        let status = document.getElementById("all-status");
+        let form = document.getElementById("form-all");
+        if (this.email != '' && this.email != null) {
+          fetch('https://formspree.io/f/xdoyjnjj', {
+            method: 'POST',
+            body: JSON.stringify({ email: this.email, message: 'Quiero que me envien información!'}),
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            form.reset();
+            status.innerHTML = "Gracias por tu suscripción!";
+
+          }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+          });
+        }
+        }
+
     }
   }
 </script>

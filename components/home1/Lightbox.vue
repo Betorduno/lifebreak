@@ -17,7 +17,7 @@
                         </svg>
                     </div>
                 <div class="lightbox-image" @click.stop="">
-                  <img class="w-100" :src="images[index]">
+                  <img class="w-100" :src="images[index].url">
               </div>
               <div class="cursor-pointer self-center px-8"
                    @click.stop="next()"
@@ -104,8 +104,8 @@ export default {
 </script>
 
 <style>
-.lightbox {
-    background: rgba(0, 0, 0, 0.8);
+.lightbox-image {
+    width: 100%;
 }
 .lightbox-image img {
     width:100%;

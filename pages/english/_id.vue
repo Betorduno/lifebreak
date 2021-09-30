@@ -4,7 +4,7 @@
     <Banner :data="banner"/>
     <Ourbenefits :ourbenefit="benefits"/>
     <Offer :offeri="offeri"/>
-    <Gallery :images="imgs"/>
+    <Gallery :objimg="gallery"/>
     <About :abt="about"/>
     <Testimonial :opinions="opt"/>
     <Footer/>
@@ -19,6 +19,7 @@ import Gallery from '@/components/home1/Gallery.vue'
 import About from '../../components/home1/About.vue'
 import Testimonial from '@/components/home1/Testimonial.vue'
 import Footer from '@/components/Footer.vue'
+import { gql } from 'graphql-request';
 
 export default {
   components: {
@@ -34,89 +35,131 @@ export default {
   },
   data() {
     return {
-      benefits:{
-        title: 'Benefits to Setting Up Your Startup in Our Coworking Space',
-        subtitle: 'OUR BENEFITS',
-        desc: 'We are proud of what we have come up to at our center! Only here you get to enjoy with talented people who work in different areas, designers, photographers, engineers etc. ',
-        list: [
-          'Actual office space that promoting productivity',
-          'Meaningful connections with your team',
-          'Increased productivity to get some work done'
-        ],
-        textbtn: 'Schedule My Tour',
-        urlbtn: '#',
-        image: 'https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/bannercw1-2.jpg'
-      },
-      offeri: {
-        title: 'What We Offer',
-        subtitle: 'LEARN AND GROW',
-        desc: 'We are a community of bold minds who have decided to work under the same roof. Our workspace and the people around us inspire us to take action, to grow, to do better. By saying that our coworking space.',
-        gallery: [
-          {
-            title: 'Private Office',
-            desc: 'Drop in whenever you or your team need',
-            image: 'https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/h4_img_sec4_11.jpg'
-          },
-          {
-            title: 'Private Office2',
-            desc: 'Drop in whenever you or your team need',
-            image: 'https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/h4_img_sec4_11.jpg'
-          },
-          {
-            title: 'Private Office3',
-            desc: 'Drop in whenever you or your team need',
-            image: 'https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/h4_img_sec4_11.jpg'
-          },
-          {
-            title: 'Private Office4',
-            desc: 'Drop in whenever you or your team need',
-            image: 'https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/h4_img_sec4_11.jpg'
-          },
-        ]
-      },
-      imgs: [
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg',
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg',
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131).jpg',
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(123).jpg',
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(118).jpg',
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(128).jpg',
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(132).jpg',
-          'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(115).jpg'
-      ],
-
-      about: {
-        subtitle: 'ABOUT US',
-        title: 'Community, creativity,<br>comfort & more',
-        description: 'We are a community of bold minds who have decided to work under the same roof. Our workspace and the people around us inspire us to take action, to grow, to do better. By saying that our coworking space is sustainable and comfy we confirm that you will get 100% satisfaction from working here and making the best out of this experience.',
-        textbtn: 'Leam more',
-        urlbtn: '#',
-      },
-      opt: {
-        title: 'People Talkings<br> About US',
-        subtitle:'Testimonial',
-        desc: '...una forma distinta de ver el trabajo, que intenta que este sea una parte integral del estilo de vida, y no compartimentos diferenciados de trabajo y ocio. En LifeBreak podrás trabajar cómodamente además de disfrutar de las instalaciones y las variadas actividades que ofrecemos. El propósito de nuestro coliving es crear un ambiente internacional y relaciones que vayan más allá de lo profesional, buscando interacciones de aprendizaje y colaboración entre los profesionales que lo habitan y los voluntarios internacionales que ayudan en el proyecto.',
-        boxs: [
-          {
-            title: 'COWORKING',
-            image:'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg'
-          },
-          {
-            title: 'SERVICIOS',
-            image:'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg'
-          },
-          {
-            title: 'ROOMS',
-            image:'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg'
-          }
-        ],
-        background: 'url(https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/bgoc-1.png)'
-      },
-      banner: {
-        title: 'Programa Inglés',
-        image: require('~/assets/img/contact/contactbanner.jpg')
-      }
+      service: {},
+      banner: {},
+      benefits:{},
+      offeri: {},
+      imgs: {},
+      gallery: {},
+      about: {},
+      opt: {},
     }
-  }
+  },
+   created() {
+    this.fetchData();
+  },
+  watch: {
+    $route: 'fetchData',
+  },
+  methods: {
+    async fetchData() {
+      this.service = null
+      try {
+        const data = await this.$graphcms.request(
+          gql`
+            query getServicios($id: ID!) {
+              servicios(where: { id: $id }) {
+                id
+                englishProgram
+                titlebanner
+                imagebanner {
+                  url
+                }
+                subtitlebenefit
+                titlebenefit
+                descbenefit
+                listbenefit
+                tetxbtnbenefits
+                urlDelBotonBeneficio
+                imagebenefit {
+                  url
+                }
+                titleoffer
+                subtituloOferta
+                descoffer
+                listaOfertas {
+                  title
+                  desc
+                  image {
+                    url
+                  }
+                }
+                galerias {
+                  imagemain {
+                    url
+                  }
+                  galleryimage {
+                    url
+                  }
+                }
+                titleabout
+                subtitleabout
+                descabout
+                textbtnabout
+                urlbtnabout
+                titleperson
+                subtitleperson
+                descperson
+                boxperson {
+                  ... on CajasDeInformacion {
+                    id
+                    title
+                    image {
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          `,
+          {
+            id: this.$route.params.id,
+          }
+        );
+        this.service=data.servicios;
+        this.banner = {
+          title: this.service.titlebanner,
+          image: this.service.imagebanner.url
+        }
+        this.benefits = {
+          title: this.service.titlebenefit,
+          subtitle:this.service.subtitlebenefit,
+          desc: this.service.descbenefit,
+          list: this.service.listbenefit,
+          textbtn: this.service.tetxbtnbenefits,
+          urlbtn: this.service.urlDelBotonBeneficio,
+          image: this.service.imagebenefit.url
+        }
+
+        this.offeri = {
+          title: this.service.titleoffer,
+          subtitle: this.service.subtituloOferta,
+          desc: this.service.descoffer,
+          gallery: this.service.listaOfertas
+        }
+
+        this.about= {
+          subtitle: this.service.subtitleabout,
+          title: this.service.titleabout,
+          description: this.service.descabout,
+          textbtn: this.service.textbtnabout,
+          urlbtn: this.service.urlbtnabout,
+        }
+
+        this.gallery = this.service.galerias;
+
+        this.opt = {
+          title: this.service.titleperson,
+          subtitle:this.service.subtitleperson,
+          desc: this.service.descperson,
+          boxs: this.service.boxperson
+        }
+      } catch (e) {
+        // handle error
+        console.log('hola')
+        window.location.href="/"
+      }
+    },
+  },
 }
 </script>

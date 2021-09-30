@@ -49,6 +49,7 @@ export default {
     line-height: 1.8em;
     font-weight: 400;
     padding: 0 10em;
+    width: 100%;
   }
   .subtitle {
     font-weight: 400;
@@ -56,6 +57,7 @@ export default {
     font-size: 18px;
     margin-bottom: 1.5em;
     letter-spacing: 1.8px;
+    text-transform: uppercase;
   }
   @media(max-width: 728px){
     .desc {

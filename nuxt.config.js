@@ -37,7 +37,8 @@ export default {
     {src: '~/plugins/main.js'},
     {src: '~/plugins/lightbox.js', ssr: false},
     {src: '~/plugins/carousel.js', ssr: false},
-    {src: '~/plugins/aos.js', ssr: false}
+    {src: '~/plugins/aos.js', ssr: false},
+    {src: '~/plugins/graphcms.js'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -45,6 +46,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/dotenv'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -52,14 +54,21 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
   ],
+
+  static: {
+    prefix: false
+  },
+
   router: {
-    extendRoutes(routes, resolve) {
-      routes.push({
-        name: 'custom',
-        path: '*',
-        component: resolve(__dirname, 'pages/404.vue')
-      })
-    }
+    // mode: 'hash',
+    // base:'/'
+    // extendRoutes(routes, resolve) {
+    //   routes.push({
+    //     name: 'custom',
+    //     path: '*',
+    //     component: resolve(__dirname, 'pages/404.vue')
+    //   })
+    // }
   },
   // // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

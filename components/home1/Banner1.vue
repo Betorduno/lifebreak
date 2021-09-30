@@ -1,10 +1,9 @@
 <template>
   <div class="">
     <!-- Header Start -->
-
     <header id="home" class="position-relative ">
-      <div v-if="imgs">
-        <div v-if=" imgs[index]" class="row mx-0 d-flex justify-content-center flex-row home-banner" :style="`background-image: url('${imgs[index].image}');`">
+      <div v-if="imgs[index]">
+        <div v-if="imgs[index].image.url" class="row mx-0 d-flex justify-content-center flex-row home-banner" :style="{ backgroundImage: `url(${imgs[index].image.url})` }">
           <div
             class="col-md-1 home-arrows "
             @click.stop="prev"
@@ -34,7 +33,7 @@
                     <img class="img-ico" src="../../assets/img/home/lifebreak.svg" alt="">
                     {{ imgs[index].subtitle }}
                   </h3>
-                  <h1 class="title text-break" data-aos="fade-right">{{ imgs[index].title }}</h1>
+                  <h1 class="title text-break" data-aos="fade-right" data-aos-anchor="#example-anchor">{{ imgs[index].title }}</h1>
                   <br>
                   <p class="desc text-break" data-aos="fade-right">{{ imgs[index].desc }}</p>
                   <br>
@@ -60,11 +59,11 @@
             </svg>
           </div>
         </div>
-        <div class="home-banner-rg" data-aos="fade-right"  :style="`background-image: url('${ imgs[index].imagel}');`"></div>
+        <div class="home-banner-rg" v-if="imgs[index].imagel.url" data-aos="fade-left" data-aos-offset="500" data-aos-duration="1500" :style="{ backgroundImage: `url(${imgs[index].imagel.url})` }"></div>
       </div>
-      <div class="circle">
-        <span class="px-1" :key="idx" v-for="(i ,idx) in imgs">
-        <i :class="`fas fa-circle ${ idx == index ? 'active-color': ''}`"  @click.stop="changeSlider(idx)"></i>
+      <div v-if="imgs[index]" class="circle text-white">
+        <span v-if="imgs[index].image" class="px-1">
+          <i :key="idx" v-for="(i ,idx) in imgs" :class="`fas fa-circle ${ idx == index ? 'active-color': ''}`"  @click.stop="changeSlider(idx)"></i>
         </span>
       </div>
     </header>
@@ -73,97 +72,43 @@
 </template>
 
 <script>
+import { gql } from 'graphql-request';
 export default {
   name: "Banner1",
   data() {
     return {
       index: 0,
       vol:0,
-      imgs: [
-        {
-          title: "Un Coworking diferente",
-          subtitle: "LIFEBREAK BY IMUKO",
-          desc: 'Un espacio rural de trabajo cerca a Guatapé en el que conectarás contigo y con el mundo a través de una experiencia multicultural de Inmersión Lingüística.',
-          textbtn: "Schedule My Tour",
-          urlbtn: "#",
-          image:
-            "https://dm2302files.storage.live.com/y4m_D5JcPnar1ttothiGT_Zw1mZ_BxazWlRVW_68QadkDPbSGJKvgIyJp0tLSszpgHLUWVEOOS5_r-W8pKuHNyiPotiQW7HeoRW9EKxRJzCx6SbKQgzwaB3UuOThV20llPVbzznv3spn33lSyGVDbv6O4oVmOHmBFW3xz1I6OqbCXvSG5Y4srLLOQx8J1vHG3qq?width=1920&height=942&cropmode=none",
-          imagel:"https://dm2302files.storage.live.com/y4mP8vqi5EfIM2Z5j-lEjbX5JIJ8ixJGFYR_tGTHTEwKsxPHNYYpEfvWlKwvmJOF1mSIjSr3y0VOc4G9NuBOep7IJsOyEdOlSbWKgn2h_-_pdHfRHv4dDwvzlGWNyzHhmimuCrCyV4MtsJVKVJ3yEziQCHD3pph0tfCKl-o3I7xMvwQQZJAvGHEb7_-91-WCH4n?width=1152&height=817&cropmode=none"
-        },
-        {
-          title: "Lorem insup2",
-          subtitle: "..................",
-          desc: '',
-          textbtn: "Schedule My Tour",
-          urlbtn: "#",
-           image:
-            "https://dm2302files.storage.live.com/y4m_D5JcPnar1ttothiGT_Zw1mZ_BxazWlRVW_68QadkDPbSGJKvgIyJp0tLSszpgHLUWVEOOS5_r-W8pKuHNyiPotiQW7HeoRW9EKxRJzCx6SbKQgzwaB3UuOThV20llPVbzznv3spn33lSyGVDbv6O4oVmOHmBFW3xz1I6OqbCXvSG5Y4srLLOQx8J1vHG3qq?width=1920&height=942&cropmode=none",
-          imagel:"https://dm2302files.storage.live.com/y4mP8vqi5EfIM2Z5j-lEjbX5JIJ8ixJGFYR_tGTHTEwKsxPHNYYpEfvWlKwvmJOF1mSIjSr3y0VOc4G9NuBOep7IJsOyEdOlSbWKgn2h_-_pdHfRHv4dDwvzlGWNyzHhmimuCrCyV4MtsJVKVJ3yEziQCHD3pph0tfCKl-o3I7xMvwQQZJAvGHEb7_-91-WCH4n?width=1152&height=817&cropmode=none"
-        },
-        {
-          title: "Lorem insup3",
-          subtitle: "..................",
-          desc: '',
-          textbtn: "Schedule My Tour",
-          urlbtn: "#",
-           image:
-            "https://dm2302files.storage.live.com/y4m_D5JcPnar1ttothiGT_Zw1mZ_BxazWlRVW_68QadkDPbSGJKvgIyJp0tLSszpgHLUWVEOOS5_r-W8pKuHNyiPotiQW7HeoRW9EKxRJzCx6SbKQgzwaB3UuOThV20llPVbzznv3spn33lSyGVDbv6O4oVmOHmBFW3xz1I6OqbCXvSG5Y4srLLOQx8J1vHG3qq?width=1920&height=942&cropmode=none",
-          imagel:"https://dm2302files.storage.live.com/y4mP8vqi5EfIM2Z5j-lEjbX5JIJ8ixJGFYR_tGTHTEwKsxPHNYYpEfvWlKwvmJOF1mSIjSr3y0VOc4G9NuBOep7IJsOyEdOlSbWKgn2h_-_pdHfRHv4dDwvzlGWNyzHhmimuCrCyV4MtsJVKVJ3yEziQCHD3pph0tfCKl-o3I7xMvwQQZJAvGHEb7_-91-WCH4n?width=1152&height=817&cropmode=none"
-        },
-        {
-          title: "Lorem insup4",
-          subtitle: "..................",
-          desc: '',
-          textbtn: "Schedule My Tour",
-          urlbtn: "#",
-           image:
-            "https://dm2302files.storage.live.com/y4m_D5JcPnar1ttothiGT_Zw1mZ_BxazWlRVW_68QadkDPbSGJKvgIyJp0tLSszpgHLUWVEOOS5_r-W8pKuHNyiPotiQW7HeoRW9EKxRJzCx6SbKQgzwaB3UuOThV20llPVbzznv3spn33lSyGVDbv6O4oVmOHmBFW3xz1I6OqbCXvSG5Y4srLLOQx8J1vHG3qq?width=1920&height=942&cropmode=none",
-          imagel:"https://dm2302files.storage.live.com/y4mP8vqi5EfIM2Z5j-lEjbX5JIJ8ixJGFYR_tGTHTEwKsxPHNYYpEfvWlKwvmJOF1mSIjSr3y0VOc4G9NuBOep7IJsOyEdOlSbWKgn2h_-_pdHfRHv4dDwvzlGWNyzHhmimuCrCyV4MtsJVKVJ3yEziQCHD3pph0tfCKl-o3I7xMvwQQZJAvGHEb7_-91-WCH4n?width=1152&height=817&cropmode=none"
-        },
-        {
-          title: "Lorem insup5",
-          subtitle: "..................",
-          desc: '',
-          textbtn: "Schedule My Tour",
-          urlbtn: "#",
-           image:
-            "https://dm2302files.storage.live.com/y4m_D5JcPnar1ttothiGT_Zw1mZ_BxazWlRVW_68QadkDPbSGJKvgIyJp0tLSszpgHLUWVEOOS5_r-W8pKuHNyiPotiQW7HeoRW9EKxRJzCx6SbKQgzwaB3UuOThV20llPVbzznv3spn33lSyGVDbv6O4oVmOHmBFW3xz1I6OqbCXvSG5Y4srLLOQx8J1vHG3qq?width=1920&height=942&cropmode=none",
-          imagel:"https://dm2302files.storage.live.com/y4mP8vqi5EfIM2Z5j-lEjbX5JIJ8ixJGFYR_tGTHTEwKsxPHNYYpEfvWlKwvmJOF1mSIjSr3y0VOc4G9NuBOep7IJsOyEdOlSbWKgn2h_-_pdHfRHv4dDwvzlGWNyzHhmimuCrCyV4MtsJVKVJ3yEziQCHD3pph0tfCKl-o3I7xMvwQQZJAvGHEb7_-91-WCH4n?width=1152&height=817&cropmode=none"
-        },
-        {
-          title: "Lorem insup6",
-          subtitle: "..................",
-          desc: '',
-          textbtn: "Schedule My Tour",
-          urlbtn: "#",
-           image:
-            "https://dm2302files.storage.live.com/y4m_D5JcPnar1ttothiGT_Zw1mZ_BxazWlRVW_68QadkDPbSGJKvgIyJp0tLSszpgHLUWVEOOS5_r-W8pKuHNyiPotiQW7HeoRW9EKxRJzCx6SbKQgzwaB3UuOThV20llPVbzznv3spn33lSyGVDbv6O4oVmOHmBFW3xz1I6OqbCXvSG5Y4srLLOQx8J1vHG3qq?width=1920&height=942&cropmode=none",
-          imagel:"https://dm2302files.storage.live.com/y4mP8vqi5EfIM2Z5j-lEjbX5JIJ8ixJGFYR_tGTHTEwKsxPHNYYpEfvWlKwvmJOF1mSIjSr3y0VOc4G9NuBOep7IJsOyEdOlSbWKgn2h_-_pdHfRHv4dDwvzlGWNyzHhmimuCrCyV4MtsJVKVJ3yEziQCHD3pph0tfCKl-o3I7xMvwQQZJAvGHEb7_-91-WCH4n?width=1152&height=817&cropmode=none"
-        },
-        {
-          title: "Lorem insup7",
-          subtitle: "..................",
-          textbtn: "Schedule My Tour",
-          desc: '',
-          urlbtn: "#",
-           image:
-            "https://dm2302files.storage.live.com/y4m_D5JcPnar1ttothiGT_Zw1mZ_BxazWlRVW_68QadkDPbSGJKvgIyJp0tLSszpgHLUWVEOOS5_r-W8pKuHNyiPotiQW7HeoRW9EKxRJzCx6SbKQgzwaB3UuOThV20llPVbzznv3spn33lSyGVDbv6O4oVmOHmBFW3xz1I6OqbCXvSG5Y4srLLOQx8J1vHG3qq?width=1920&height=942&cropmode=none",
-          imagel:"https://dm2302files.storage.live.com/y4mP8vqi5EfIM2Z5j-lEjbX5JIJ8ixJGFYR_tGTHTEwKsxPHNYYpEfvWlKwvmJOF1mSIjSr3y0VOc4G9NuBOep7IJsOyEdOlSbWKgn2h_-_pdHfRHv4dDwvzlGWNyzHhmimuCrCyV4MtsJVKVJ3yEziQCHD3pph0tfCKl-o3I7xMvwQQZJAvGHEb7_-91-WCH4n?width=1152&height=817&cropmode=none"
-        },
-        {
-          title: "Lorem insup8",
-          subtitle: "..................",
-          desc: '',
-          textbtn: "Schedule My Tour",
-          urlbtn: "#",
-           image:
-            "https://dm2302files.storage.live.com/y4m_D5JcPnar1ttothiGT_Zw1mZ_BxazWlRVW_68QadkDPbSGJKvgIyJp0tLSszpgHLUWVEOOS5_r-W8pKuHNyiPotiQW7HeoRW9EKxRJzCx6SbKQgzwaB3UuOThV20llPVbzznv3spn33lSyGVDbv6O4oVmOHmBFW3xz1I6OqbCXvSG5Y4srLLOQx8J1vHG3qq?width=1920&height=942&cropmode=none",
-          imagel:"https://dm2302files.storage.live.com/y4mP8vqi5EfIM2Z5j-lEjbX5JIJ8ixJGFYR_tGTHTEwKsxPHNYYpEfvWlKwvmJOF1mSIjSr3y0VOc4G9NuBOep7IJsOyEdOlSbWKgn2h_-_pdHfRHv4dDwvzlGWNyzHhmimuCrCyV4MtsJVKVJ3yEziQCHD3pph0tfCKl-o3I7xMvwQQZJAvGHEb7_-91-WCH4n?width=1152&height=817&cropmode=none"
-        }
-      ]
+      imgs: [],
     };
   },
+
   methods: {
+    async getData() {
+    await this.$graphcms.request(
+      gql`
+        {
+          bannerPrincipals {
+            show
+            title
+            subtitle
+            desc
+            image {
+              url
+            }
+            imagel {
+              url
+            }
+            textbtn
+            urlbtn
+          }
+        }
+      `
+    ).then((res)=>{
+      this.imgs = res.bannerPrincipals;
+      this.vol = this.imgs.length;
+    });
+  },
     changeSlider(id) {
       this.index = id;
     },
@@ -208,7 +153,10 @@ export default {
   },
   mounted() {
     this.intervalTime();
-    this.vol = this.imgs.length;
+    this.getData();
+    document.addEventListener('aos', ({ detail }) => {
+      console.log('animated in', detail);
+    });
     window.addEventListener("keydown", this.onKeydown);
   },
   destroyed() {
