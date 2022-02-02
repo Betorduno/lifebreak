@@ -1,4 +1,5 @@
 <template>
+<client-only>
   <!-- Single Blog Details Page Area Start -->
   <section class="blog-page-area">
     <div class="container">
@@ -20,6 +21,7 @@
 
     </div>
   </section>
+</client-only>
   <!-- Single Blog Details Page Area End -->
 </template>
 

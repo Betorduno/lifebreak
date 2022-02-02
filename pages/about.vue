@@ -45,12 +45,6 @@ export default {
             image: require('@/assets/img/somos/s2.jpg'),
             linkperson: '#',
             desc: 'Tatiana Prieto: Ingeniera , Fundadora de IMUKO.CO, fiel creyente que la tecnología transforma vidas de manera positiva y apasionada con que el talento profesional de Colombia, sea reconocido a nivel Internacional.',
-          },
-          {
-            title: 'Raphaela',
-            image: require('@/assets/img/somos/s3.jpg'),
-            linkperson: '#',
-            desc: 'Raphaela Szerb: Austriaca, Creció en el sector de la hostelería. Una enamorada de la Naturaleza Colombiana. Actualmente comparte sus estudios y pasión en  hotelería turismo. Ha trabajado en países como Mexico, Argentina e Inglaterra.',
           }
         ],
         background: 'url(https://demo2wpopal.b-cdn.net/co-workshop/wp-content/uploads/2018/11/bgoc-1.png)'

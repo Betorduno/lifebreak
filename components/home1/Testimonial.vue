@@ -1,4 +1,5 @@
 <template>
+<client-only>
 <div>
   <div v-if="opinions" class="container">
     <div class="row cont-desc ">
@@ -18,6 +19,7 @@
     </div>
   </div>
 </div>
+</client-only>
 </template>
 <script>
 export default {

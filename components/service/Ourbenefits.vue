@@ -1,4 +1,5 @@
 <template>
+<client-only>
   <div v-if="ourbenefit" class="container">
     <div class="row mx-0 my-5">
       <div data-aos="fade-right" data-aos-duration="2000" class="col-xs-12 col-sm-12 col-md-6 p-xs-2">
@@ -19,6 +20,7 @@
       </div>
     </div>
   </div>
+  </client-only>
 </template>
 <script>
 export default {

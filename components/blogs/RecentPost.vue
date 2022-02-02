@@ -1,11 +1,12 @@
 <template>
+<client-only>
   <li>
     <router-link :to="`${id}`" class="d-flex align-items-center">
       <img class="image" :src="image" :alt="altText">
       <p class="title">{{title}}<span>{{publishDate}}</span></p>
     </router-link>
   </li>
-
+</client-only>
 </template>
 <style scoped>
 .title {

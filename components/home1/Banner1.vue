@@ -223,7 +223,7 @@ export default {
 .title {
     font-family: "Mukta", sans-serif;
     z-index: 9;
-    font-size: 86px;
+    font-size: 75px;
     font-weight: 500;
     color: rgb(255, 255, 255);
     letter-spacing: -6px;
@@ -243,7 +243,7 @@ export default {
   line-height: 31px;
   font-weight: 300;
   color: rgb(255, 255, 255);
-  font-family: Mukta;
+  font-family: 'Mukta', sans-serif;
   margin: 0px;
   padding: 0px;
   opacity: 1;
@@ -291,8 +291,12 @@ export default {
 
 @media(max-width: 1024px) {
   .title {
-    font-size: 75px;
+    font-size: 55px;
   }
+
+  .desc {
+  font-size: 18px;
+}
   .line {
     display: none;
     .vertical {
@@ -301,6 +305,11 @@ export default {
     .number-indice h2 {
       display: none;
     }
+  }
+}
+@media(max-height: 800px) {
+  .title {
+    font-size: 55px;
   }
 }
 @media(max-width: 768px) {
@@ -342,4 +351,6 @@ export default {
     margin-right: 0 ;
   }
 }
+
+
 </style>

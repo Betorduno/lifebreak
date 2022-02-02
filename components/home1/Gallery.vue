@@ -1,4 +1,5 @@
 <template>
+<client-only>
   <div v-if="objimg" class="container-fluid">
     <div class="row">
       <div class="col-md-4 col-sm-6 col-xs-12 single_portfolio_text" :key="idx" v-for="(img, idx) in objimg">
@@ -13,6 +14,7 @@
       </div>
     </div>
   </div>
+  </client-only>
 </template>
 
 <script>

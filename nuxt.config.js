@@ -5,7 +5,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'lifebreak',
+    title: 'imukocamp',
     htmlAttrs: {
       lang: 'en'
     },
@@ -57,18 +57,6 @@ export default {
 
   static: {
     prefix: false
-  },
-
-  router: {
-    // mode: 'hash',
-    // base:'/'
-    // extendRoutes(routes, resolve) {
-    //   routes.push({
-    //     name: 'custom',
-    //     path: '*',
-    //     component: resolve(__dirname, 'pages/404.vue')
-    //   })
-    // }
   },
   // // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

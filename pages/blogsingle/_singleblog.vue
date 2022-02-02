@@ -1,9 +1,11 @@
 <template>
   <div class="home home-1" id="list-of-sections">
-    <Header1 />
+  <client-only>
+    <Header1/>
     <Banner :data="banner"/>
     <BlogSinglePageLayout />
-    <Footer />
+    <Footer/>
+  </client-only>
   </div>
 </template>
 

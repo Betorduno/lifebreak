@@ -1,4 +1,5 @@
 <template>
+<client-only>
   <div v-if="offeri" class="container-fluid">
     <div class="container mb-5 pb-5">
       <div class="row mg-bottom">
@@ -38,6 +39,7 @@
       </div>
     </div>
   </div>
+  </client-only>
 </template>
 <script>
 export default {

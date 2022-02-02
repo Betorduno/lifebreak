@@ -1,4 +1,5 @@
 <template>
+<client-only>
   <div v-if="abt" class="container">
     <div class="row justify-content-center my-5">
       <h4 class="subtitle text-center" data-aos="fade-up" data-aos-duration="500">{{abt.subtitle}}</h4>
@@ -12,6 +13,7 @@
       </div>
     </div>
   </div>
+  </client-only>
 </template>
 <script>
 export default {

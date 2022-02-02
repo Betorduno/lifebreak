@@ -1,5 +1,6 @@
 <template>
-  <div>
+<client-only>
+  <div  v-if="Object.keys(links).length > 0 && !loading">
     <!--Main Menu/ Mobile Menu Section-->
     <section class="menu-section-area">
       <!-- Navigation -->
@@ -40,7 +41,6 @@
               </li>
               <li class="nav-item dropdown">
                 <a
-                  href="#"
                   class="nav-link js-scroll-trigger dropdown-toggle"
                   data-toggle="dropdown"
                   >PROGRAMA INGLÉS<i class="fas fa-angle-down"></i
@@ -52,7 +52,6 @@
 
               <li class="nav-item dropdown">
                 <a
-                  href="#"
                   class="nav-link js-scroll-trigger dropdown-toggle"
                   data-toggle="dropdown"
                   >QUE OFRECEMOS<i class="fas fa-angle-down"></i
@@ -110,9 +109,9 @@
           <b-collapse id="nav-collapse" is-nav>
             <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto">
-              <b-nav-item href="#about">INICIO</b-nav-item>
+              <b-nav-item href="/">INICIO</b-nav-item>
               <b-nav-item-dropdown
-                to="#"
+                to=""
                 text="PROGRAMA INGLES"
                 no-caret
                 class="fas fa-angle-down"
@@ -121,7 +120,7 @@
 
               </b-nav-item-dropdown>
               <b-nav-item-dropdown
-                to="#"
+                to=""
                 text="QUE OFRECEMOS"
                 no-caret
                 class="fas fa-angle-down"
@@ -129,9 +128,9 @@
                 <b-dropdown-item v-if="link.englishProgram === false" :key="idx"  v-for="(link, idx) in links" :to="`/english/${link.id}`">{{link.titleLink}}</b-dropdown-item>
               </b-nav-item-dropdown>
 
-              <b-nav-item href="#screenshots">QUIENES SOMOS</b-nav-item>
-              <b-nav-item href="#features">BLOG</b-nav-item>
-              <b-nav-item href="#reviews">CONTÁCTENOS</b-nav-item>
+              <b-nav-item href="/about">QUIENES SOMOS</b-nav-item>
+              <b-nav-item href="/blog">BLOG</b-nav-item>
+              <b-nav-item href="/contact">CONTÁCTENOS</b-nav-item>
             </b-navbar-nav>
           </b-collapse>
         </b-container>
@@ -140,6 +139,7 @@
     </section>
     <!--Main Menu/ Mobile Menu Section-->
   </div>
+  </client-only>
 </template>
 
 <script>
@@ -148,7 +148,8 @@ export default {
   name: "Header1",
   data(){
       return {
-        links: {}
+        links: {},
+        loading:true
       }
   },
   created() {
@@ -178,27 +179,26 @@ export default {
         // handle error
       }
     },
-  },
-
-  mounted: function () {
-    // Menu Js
-    this.$nextTick(function () {
-      window.onscroll = function () {
-        myFunction();
-      };
-
+    changeStatusScroll() {
       var header = document.getElementById("mainNav");
       var sticky = header.offsetTop;
 
-      function myFunction() {
-        if (window.pageYOffset > sticky) {
-          header.classList.add("navbar-shrink");
-        } else {
-          header.classList.remove("navbar-shrink");
-        }
+      if (window.pageYOffset > sticky) {
+        header.classList.add("navbar-shrink");
+      } else {
+        header.classList.remove("navbar-shrink");
+      }
+    }
+  },
+
+  mounted() {
+    // Menu Js
+    this.$nextTick(function () {
+      this.loading = false
+      window.onscroll = ()=> {
+        this.changeStatusScroll();
       }
     });
-    // Menu End
   },
 };
 </script>

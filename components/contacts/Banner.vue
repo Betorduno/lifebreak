@@ -1,7 +1,8 @@
 <template>
   <div>
+    <client-only>
     <!-- Header Start -->
-    <header v-if="data" class="page-banner-area" id="home" :style="`background-image: url(${data.image})`">
+    <header v-if="Object.keys(data).length > 0" class="page-banner-area" id="home" :style="`background-image: url(${data.image})`">
       <div class="section-overlay d-flex">
         <div class="container">
           <div class="header-caption position-relative wow fadeInLeft d-flex">
@@ -11,6 +12,7 @@
         </div>
       </div>
     </header>
+    </client-only>
     <!-- Header End -->
   </div>
 </template>

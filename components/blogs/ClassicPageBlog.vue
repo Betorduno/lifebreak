@@ -1,5 +1,6 @@
 <template>
-  <div id="content">
+<client-only>
+  <div v-if="blogs" id="content">
     <BlogClassicItem v-for="blog in itemsForList" :key="blog.id"
         :image="blog.imagemain.url"
         :altText="blog.altText"
@@ -31,6 +32,7 @@
 
     <!-- Blog Pagination Box-->
 </div>
+</client-only>
 </template>
 
 <script>

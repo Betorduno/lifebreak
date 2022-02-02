@@ -1,5 +1,6 @@
 <template>
-  <div id="content">
+<client-only>
+  <div v-if="dataAll" id="content">
     <!-- Block 1-->
     <div class="block-1">
       <div class="card">
@@ -42,6 +43,7 @@
     </div>
     <!-- Block 1-->
 </div>
+</client-only>
 </template>
 
 <script>
@@ -59,6 +61,7 @@ export default {
 
   data() {
     return {
+      dataAll:{},
       image: '',
       altText: '',
       title: '',
@@ -124,6 +127,7 @@ export default {
             id: this.$route.params.singleblog,
           }
         );
+        this.dataAll = data;
         this.image= data.blog.contentblog.image.url,
         this.altText= data.blog.contentblog.altText,
         this.title= data.blog.contentblog.title,

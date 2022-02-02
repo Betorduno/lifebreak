@@ -1,11 +1,13 @@
 <template>
+<client-only>
   <!-- Sidebar Single Widget Start -->
-  <div class="widget widget-recent-posts" id="recent-posts">
+  <div v-if="recient" class="widget widget-recent-posts" id="recent-posts">
     <WidgetTitle title="Recent Posts" />
     <ul>
       <RecentPost v-for="recentPost in recient" :key="recentPost.id" :image="recentPost.image" :altText="recentPost.altText" :title="recentPost.title" :publishDate="recentPost.publishDate" :id="recentPost.url" />
     </ul>
   </div>
+</client-only>
   <!-- Sidebar Single Widget End -->
 </template>
 

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <client-only>
     <div class="container pt-5">
       <div class="row m-0">
         <div class="col-12 col-lg-5 pb-5">
@@ -64,6 +65,7 @@
         </div>
       </div>
     </div>
+    </client-only>
   </div>
 </template>
 <script>
